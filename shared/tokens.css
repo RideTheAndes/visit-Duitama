@@ -1,0 +1,67 @@
+/* ============================================================
+   Visit Duitama — tokens canónicos
+   Fuente: Identidad Visual v1.0 · Sistema Digital v1.1 · BRIEF.md §3
+   Estos valores son restricciones, no sugerencias.
+   ============================================================ */
+
+:root{
+  /* --- Color --- */
+  --paper:          #ECEEE6;  /* Neblina — fondo de marca, secciones editoriales */
+  --ui-white:       #FAFAF7;  /* Casi-blanco cálido — fondo transaccional. NUNCA #FFFFFF */
+  --paper-deep:     #E2E4D8;  /* Alternancia, callouts */
+  --ink:            #232C39;  /* Madrugada — texto, footer, estados activos */
+  --ink-soft:       #4C5561;  /* Texto secundario */
+  --terracota:      #A8461F;  /* Teja — EXCLUSIVO: marcador de dato verificable */
+  --terracota-deep: #7E3416;  /* Teja profunda — texto de dato en mono */
+  --verde:          #5B6E4F;  /* Páramo — etiquetas editoriales, gráficos de ruta */
+  --cta:            #1F7A4D;  /* Verde Reserva — EXCLUSIVO CONVERSIÓN */
+  --cta-hover:      #166B41;
+  --ocre:           #BB8B2E;  /* Ruana — dificultad media, D del isotipo en oscuro,
+                                 subrayado de dato pendiente */
+  --cielo:          #3E6E8E;  /* Cielo Boyacense — links y estados de foco */
+  --line:           rgba(35,44,57,0.14);
+
+  /* --- Tipografía --- */
+  --font-authority: 'Fraunces', Georgia, serif;         /* 600 romana / 500 itálica */
+  --font-ui:        'Libre Franklin', system-ui, sans-serif; /* 300–700 */
+  --font-data:      'IBM Plex Mono', ui-monospace, monospace; /* 400/500 */
+}
+
+/* ------------------------------------------------------------
+   Componente de firma — el punto de referencia (waypoint)
+   BRIEF §3.3. El elemento más repetido del sitio tras el cuerpo.
+   ------------------------------------------------------------ */
+.fact{
+  font-family:var(--font-data);
+  font-size:13px;
+  color:var(--terracota-deep);
+  display:inline-flex; align-items:center; gap:8px;
+}
+.fact::before{
+  content:""; width:6px; height:6px; border-radius:50%;
+  background:var(--terracota); flex-shrink:0;
+}
+
+/* Dato pendiente de verificación — BRIEF §10.
+   Ningún dato inventado entra al HTML sin este marcador. */
+.fact--pending{
+  text-decoration:underline dotted var(--ocre);
+  text-underline-offset:3px;
+  cursor:help;
+}
+
+/* Chip de papel: variante para fondos oscuros (dirección C).
+   La Teja no cambia de trabajo; el dato viaja con su propio papel. */
+.fact--chip{
+  background:var(--paper);
+  padding:4px 10px;
+  border-radius:2px;
+}
+
+/* ------------------------------------------------------------
+   Accesibilidad — anillo de foco (BRIEF §7.3)
+   ------------------------------------------------------------ */
+:focus-visible{
+  outline:2px solid var(--cielo);
+  outline-offset:2px;
+}
