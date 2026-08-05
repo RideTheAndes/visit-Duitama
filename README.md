@@ -1,2 +1,2 @@
-# visit-Duitsma
+# visit-Duitama
 El repo de Visit Duitama
