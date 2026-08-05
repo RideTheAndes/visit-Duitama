@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visit Duitama — The Resident's Field Guide to Duitama, Boyacá</title>
+<meta name="description" content="Duitama, Boyacá, written in English by the people who live there. How to get from Bogotá, when the market opens, where to eat, and the climbs worth the altitude.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Visit Duitama — The Resident's Field Guide">
+<meta property="og:description" content="Duitama, Boyacá, in English, from the inside. Buses, altitude, market hours, and where the caldo is.">
+<meta property="og:url" content="https://visitduitama.com/">
+<meta property="og:image" content="https://visitduitama.com/og/field-guide.png"><!-- pending: real OG asset, Step 8 -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Visit Duitama — The Resident's Field Guide">
+<meta name="twitter:description" content="Duitama, Boyacá, in English, from the inside.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Visit Duitama",
+      "url": "https://visitduitama.com",
+      "sameAs": ["https://instagram.com/visitduitama"],
+      "areaServed": "Duitama, Boyacá, Colombia"
+    },
+    {
+      "@type": "TouristDestination",
+      "name": "Duitama",
+      "description": "High-Andean city in Boyacá, Colombia — market culture, páramo cycling and origin gastronomy, guided in English by residents.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Duitama", "addressRegion": "Boyacá", "addressCountry": "CO"}
+    },
+    {
+      "@type": "Product",
+      "name": "The 5 AM Market Run",
+      "description": "Duitama's plaza de mercado at opening hour with doña Carmen: caldo de costilla, hot chocolate with cheese, the herb aisle.",
+      "offers": {"@type": "Offer", "price": "120000", "priceCurrency": "COP", "availability": "https://schema.org/PreOrder"}
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How do I get from Bogotá to Duitama?", "acceptedAnswer": {"@type": "Answer", "text": "Buses leave Bogotá's Terminal Norte roughly every 30 minutes from 5 AM to 7 PM. The trip is about 190 km via Tunja and takes 3.5–4 hours. Fare COP 35,000–45,000 (pending verification)."}},
+        {"@type": "Question", "name": "What is Duitama's altitude?", "acceptedAnswer": {"@type": "Answer", "text": "About 2,590 m / 8,497 ft above sea level (pending verification). Take your first day slowly."}},
+        {"@type": "Question", "name": "When is the market in Duitama?", "acceptedAnswer": {"@type": "Answer", "text": "The main market day is Saturday, opening around 5:00 AM (pending verification). The caldo runs out by about 8."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+/* ==== tokens (canonical copy in shared/tokens.css) ==== */
+:root{
+  --paper:#ECEEE6; --ui-white:#FAFAF7; --paper-deep:#E2E4D8;
+  --ink:#232C39; --ink-soft:#4C5561;
+  --terracota:#A8461F; --terracota-deep:#7E3416;
+  --verde:#5B6E4F; --cta:#1F7A4D; --cta-hover:#166B41;
+  --ocre:#BB8B2E; --cielo:#3E6E8E; --line:rgba(35,44,57,0.14);
+  --ocre-text:#8A6415; --verde-text:#55684A; /* derivados AA para texto pequeño sobre claros */
+  --font-authority:'Fraunces',Georgia,serif;
+  --font-ui:'Libre Franklin',system-ui,sans-serif;
+  --font-data:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  font-family:var(--font-ui);font-weight:400;color:var(--ink);
+  background:var(--paper);font-size:17px;line-height:1.6;
+}
+:focus-visible{outline:2px solid var(--cielo);outline-offset:2px}
+a{color:var(--cielo)}
+.skip-link{
+  position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);
+  padding:10px 16px;z-index:100;font-size:14px;text-decoration:none;
+}
+.skip-link:focus{left:8px;top:8px}
+
+/* ==== signature fact component ==== */
+.fact{
+  font-family:var(--font-data);font-size:13px;color:var(--terracota-deep);
+  display:inline-flex;align-items:center;gap:8px;
+}
+.fact::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--terracota);flex-shrink:0;
+}
+.fact--pending{
+  text-decoration:underline dotted var(--ocre);text-underline-offset:3px;cursor:help;
+}
+
+/* ==== type layers ==== */
+h1{font-family:var(--font-authority);font-weight:600;font-size:clamp(32px,6vw,56px);line-height:1.08;letter-spacing:-0.01em}
+h2{font-family:var(--font-authority);font-weight:600;font-size:clamp(24px,3.4vw,32px);line-height:1.15}
+h3{font-family:var(--font-authority);font-weight:600;font-size:21px;line-height:1.25}
+.eyebrow{
+  font-family:var(--font-data);font-size:12px;font-weight:500;
+  text-transform:uppercase;letter-spacing:0.14em;color:var(--verde);
+}
+.micro-moment{
+  font-family:var(--font-authority);font-style:italic;font-weight:500;
+  font-size:clamp(22px,3vw,26px);line-height:1.35;color:var(--terracota);
+}
+
+/* ==== layout: editorial column + margin rail ==== */
+.page{max-width:1080px;margin:0 auto;padding:0 20px}
+@media(min-width:900px){
+  .page{display:grid;grid-template-columns:200px minmax(0,680px);gap:56px;justify-content:center}
+  .rail{grid-column:1}
+  .col{grid-column:2}
+}
+.col{max-width:680px}
+.rail{display:none}
+@media(min-width:900px){
+  .rail{display:block}
+  .rail-inner{position:sticky;top:96px}
+  .rail ol{list-style:none}
+  .rail a{
+    display:flex;gap:10px;align-items:baseline;padding:5px 0;
+    font-family:var(--font-data);font-size:12px;color:var(--ink-soft);
+    text-decoration:none;border-left:2px solid transparent;padding-left:10px;
+  }
+  .rail a .n{color:var(--verde)}
+  .rail a:hover{color:var(--ink)}
+  .rail a.active{color:var(--ink);border-left-color:var(--terracota)}
+}
+
+/* ==== nav ==== */
+.nav{
+  position:sticky;top:0;z-index:50;background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1080px;margin:0 auto;padding:0 20px;height:64px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+}
+.lockup{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
+.lockup span{font-family:var(--font-authority);font-weight:600;font-size:16px}
+.nav-links{display:none;gap:26px;list-style:none}
+@media(min-width:760px){.nav-links{display:flex}}
+.nav-links a{
+  font-size:14px;font-weight:500;color:var(--ink);text-decoration:none;
+  padding:8px 0;
+}
+.nav-links a:hover{color:var(--cielo)}
+.btn-outline{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:0 20px;border:1.5px solid var(--ink);
+  border-radius:4px;background:transparent;color:var(--ink);
+  font-family:var(--font-ui);font-size:14px;font-weight:600;text-decoration:none;
+  cursor:pointer;
+}
+.btn-outline:hover{background:var(--ink);color:var(--paper)}
+
+/* ==== hero as index card ==== */
+.hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+.hero h1{margin:14px 0 18px}
+.hero .lede{font-size:18px;font-weight:300;color:var(--ink-soft);max-width:56ch}
+.hero .lede strong{font-weight:600;color:var(--ink)}
+.index{
+  margin-top:36px;border:1px solid var(--line);background:var(--ui-white);
+  border-radius:4px;overflow:hidden;
+}
+.index-head{
+  padding:12px 18px;border-bottom:1px solid var(--line);
+  font-family:var(--font-data);font-size:11px;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--ink-soft);
+  display:flex;justify-content:space-between;gap:12px;
+}
+.index ol{list-style:none}
+.index li a{
+  display:flex;align-items:baseline;gap:14px;padding:13px 18px;
+  text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);
+}
+.index li:last-child a{border-bottom:none}
+.index li a:hover{background:var(--paper)}
+.index .n{font-family:var(--font-data);font-size:12px;color:var(--verde);min-width:22px}
+.index .t{font-weight:500;font-size:15px;flex:1}
+.index .fact{font-size:12px}
+@media(max-width:560px){
+  .index li a{flex-wrap:wrap}
+  .index .fact{margin-left:36px}
+}
+
+/* ==== sections ==== */
+.section{padding:56px 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.sec-head .n{font-family:var(--font-data);font-size:13px;color:var(--verde)}
+.section .dek{color:var(--ink-soft);font-weight:300;max-width:58ch;margin-top:8px}
+.section h2{scroll-margin-top:88px}
+
+/* ==== KBYG table ==== */
+.kbyg{margin-top:28px;border-top:1px solid var(--line)}
+.kbyg-row{
+  display:grid;grid-template-columns:130px 1fr;gap:8px 24px;
+  padding:16px 0;border-bottom:1px solid var(--line);
+}
+@media(max-width:560px){.kbyg-row{grid-template-columns:1fr}}
+.kbyg-row dt{
+  font-family:var(--font-data);font-size:12px;font-weight:500;
+  text-transform:uppercase;letter-spacing:0.12em;color:var(--ink-soft);padding-top:2px;
+}
+.kbyg-row dd p{margin-top:6px;font-size:16px}
+
+/* ==== cards (guides) ==== */
+.cards{display:grid;gap:16px;margin-top:28px}
+@media(min-width:640px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{
+  border:1px solid var(--line);background:var(--ui-white);border-radius:4px;
+  padding:20px;display:flex;flex-direction:column;gap:10px;
+  text-decoration:none;color:var(--ink);
+}
+.card:hover h3{color:var(--cielo)}
+.card h3{font-size:19px}
+.card p{font-size:14.5px;color:var(--ink-soft);flex:1}
+.card .fact{font-size:11px}
+
+/* ==== people ==== */
+.person{
+  display:grid;gap:18px;padding:28px 0;border-bottom:1px solid var(--line);
+}
+@media(min-width:640px){.person{grid-template-columns:220px 1fr;align-items:start}}
+.person:last-of-type{border-bottom:none}
+.person .bio p{margin-top:8px;font-size:16px}
+.person .quote{margin-top:12px}
+
+/* ==== photo placeholders ==== */
+.ph{
+  position:relative;border-radius:4px;overflow:hidden;color:var(--paper);
+  display:flex;align-items:flex-end;
+}
+.ph .slot{
+  font-family:var(--font-data);font-size:11px;line-height:1.5;
+  padding:10px 12px;background:rgba(35,44,57,0.55);width:100%;
+}
+.ph--gastro{background:linear-gradient(160deg,#A8461F,#5C2610)}
+.ph--land{background:linear-gradient(160deg,#5B6E4F,#3A4A34)}
+.ph--dawn{background:linear-gradient(160deg,#232C39,#3E6E8E)}
+.ph--neutral{background:linear-gradient(160deg,#4C5561,#232C39)}
+.r43{aspect-ratio:4/3}.r11{aspect-ratio:1/1}.r169{aspect-ratio:16/9}.r32{aspect-ratio:3/2}
+
+/* ==== conversion block ==== */
+.book{
+  margin-top:28px;background:var(--ui-white);border:1px solid var(--line);
+  border-radius:6px;padding:28px;
+}
+@media(min-width:760px){
+  .book{display:grid;grid-template-columns:1fr 300px;gap:32px;align-items:start}
+}
+.book .facts-row{display:flex;flex-wrap:wrap;gap:10px 20px;margin:14px 0 6px}
+.book .desc{font-size:16px;color:var(--ink-soft);margin-top:10px}
+.book-panel{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+@media(min-width:760px){.book-panel{margin-top:0}}
+.btn-cta{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:0 22px;border:none;border-radius:4px;
+  background:var(--cta);color:var(--ui-white);
+  font-family:var(--font-ui);font-size:15px;font-weight:600;cursor:pointer;
+}
+.btn-cta:hover{background:var(--cta-hover)}
+.btn-cta .price{font-family:var(--font-data);font-weight:500;font-size:14px}
+.btn-secondary{
+  display:flex;align-items:center;justify-content:center;
+  min-height:48px;padding:0 20px;border:1.5px solid var(--line);
+  border-radius:4px;background:transparent;color:var(--ink);
+  font-family:var(--font-ui);font-size:14px;font-weight:500;cursor:pointer;
+}
+.btn-secondary:hover{border-color:var(--ink)}
+.seals{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.seal{
+  font-family:var(--font-data);font-size:11px;color:var(--ink-soft);
+  border:1px solid var(--line);border-radius:3px;padding:7px 10px;
+  display:flex;gap:8px;align-items:center;
+}
+.seal .check{color:var(--cta);font-weight:500}
+.pay{
+  font-family:var(--font-data);font-size:11px;letter-spacing:0.08em;
+  color:var(--ink-soft);text-transform:uppercase;text-align:center;margin-top:2px;
+}
+
+/* ==== routes ==== */
+.route{
+  border:1px solid var(--line);background:var(--ui-white);border-radius:4px;
+  padding:20px;margin-top:16px;
+}
+.route-head{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between}
+.route .tag{
+  font-family:var(--font-data);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:3px;padding:4px 8px;color:var(--ink-soft);
+}
+.route .tag--mid{border-color:var(--ocre);color:var(--ocre-text)}
+.route p{font-size:15px;color:var(--ink-soft);margin-top:8px}
+.route .facts-row{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px}
+.alti{margin-top:12px}
+.alti svg{width:100%;height:auto;display:block}
+.icon-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+.icon-item{display:flex;align-items:center;gap:9px}
+.icon-box{
+  width:40px;height:40px;border:1px solid var(--line);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;background:var(--ui-white);
+  color:var(--ink);
+}
+.icon-item span{font-size:13px;font-weight:500;color:var(--ink-soft)}
+
+/* ==== callout / behind ==== */
+.callout{
+  background:var(--paper-deep);border-radius:4px;padding:26px;margin-top:24px;
+}
+.callout p{margin-top:8px;font-size:16px}
+
+/* ==== partner strip ==== */
+.partner{background:var(--ui-white)}
+.partner .note{
+  font-family:var(--font-data);font-size:11px;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--ink-soft);margin-top:10px;display:block;
+}
+
+/* ==== footer ==== */
+footer{background:var(--ink);color:var(--paper);padding:56px 0;margin-top:0}
+footer :focus-visible{outline-color:var(--paper)} /* anillo Cielo no alcanza 3:1 sobre Madrugada */
+footer .page{display:block}
+.foot-grid{display:grid;gap:32px;max-width:680px;margin:0 auto}
+@media(min-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
+footer a{color:var(--paper)}
+footer .fact{color:var(--ocre)}
+footer .fact::before{background:var(--ocre)}
+footer ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:8px}
+footer li a{font-size:15px}
+.foot-seal{
+  display:inline-flex;align-items:center;gap:10px;margin-top:18px;
+  border:1px solid rgba(236,238,230,0.3);border-radius:4px;padding:10px 14px;
+  font-family:var(--font-data);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;
+}
+.foot-small{font-size:13px;color:rgba(236,238,230,0.7);margin-top:28px}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="lockup" href="#top" aria-label="Visit Duitama — home">
+      <svg viewBox="0 0 100 110" width="26" height="29" aria-hidden="true">
+        <path d="M24 30 L44 66 L80 12" fill="none" stroke="#232C39" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M37 80 L37 102 A11 11 0 0 0 37 80 Z" fill="#A8461F"/>
+      </svg>
+      <span>Visit Duitama</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experiences</a></li>
+      <li><a href="#guides">Guides</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#behind">About</a></li>
+    </ul>
+    <a class="btn-outline" href="#know" data-event="secondary_cta">Plan your trip</a>
+  </div>
+</nav>
+
+<div class="page" id="top">
+  <aside class="rail" aria-label="Guide index">
+    <div class="rail-inner">
+      <ol>
+        <li><a href="#know"><span class="n">01</span> Know before you go</a></li>
+        <li><a href="#guides"><span class="n">02</span> Guides</a></li>
+        <li><a href="#trust"><span class="n">03</span> Why trust us</a></li>
+        <li><a href="#people"><span class="n">04</span> Real Boyacá</a></li>
+        <li><a href="#experience"><span class="n">05</span> The 5 AM Market Run</a></li>
+        <li><a href="#move"><span class="n">06</span> Move like a local</a></li>
+        <li><a href="#behind"><span class="n">07</span> Behind the destination</a></li>
+        <li><a href="#partners"><span class="n">08</span> For local providers</a></li>
+      </ol>
+    </div>
+  </aside>
+
+  <main class="col" id="main">
+    <!-- HERO — the index is the hero -->
+    <header class="hero">
+      <p class="eyebrow">Field notes · Duitama, Boyacá, Colombia</p>
+      <h1>The resident's field guide to Duitama, Boyacá.</h1>
+      <p class="lede">Written from Duitama, in English, by the people who live here. No agency in Bogotá can tell you when the caldo runs out. <strong>We can: by eight.</strong></p>
+      <nav class="index" aria-label="Contents">
+        <div class="index-head">
+          <span>Contents</span>
+          <span class="fact fact--pending" data-verify="altitude" title="Pending verification">2,590 M ASL</span>
+        </div>
+        <ol>
+          <li><a href="#know"><span class="n">01</span><span class="t">Know before you go</span><span class="fact fact--pending" data-verify="bus-duration" title="Pending verification">BOGOTÁ · 3.5–4 H BY BUS</span></a></li>
+          <li><a href="#guides"><span class="n">02</span><span class="t">Guides</span><span class="fact">3 ARTICLES · EN</span></a></li>
+          <li><a href="#people"><span class="n">04</span><span class="t">Real Boyacá</span><span class="fact">4 NAMES, 4 KITCHENS</span></a></li>
+          <li><a href="#experience"><span class="n">05</span><span class="t">The 5 AM Market Run</span><span class="fact fact--pending" data-verify="market-opening-hour" title="Pending verification">SATURDAYS · 5:00 AM</span></a></li>
+          <li><a href="#move"><span class="n">06</span><span class="t">Move like a local</span><span class="fact fact--pending" data-verify="rusia-gain" title="Pending verification">LA RUSIA · +1,100 M</span></a></li>
+        </ol>
+      </nav>
+    </header>
+
+    <!-- 01 KNOW BEFORE YOU GO -->
+    <section class="section" id="know" aria-labelledby="know-h">
+      <div class="sec-head"><span class="n">01</span><h2 id="know-h">Know before you go</h2></div>
+      <p class="dek">The practical layer TripAdvisor doesn't have. Exact, honest, updated by residents.</p>
+      <dl class="kbyg">
+        <div class="kbyg-row">
+          <dt>Altitude</dt>
+          <dd><span class="fact fact--pending" data-verify="altitude" title="Pending verification">2,590 M / 8,497 FT ASL</span>
+          <p>Take day one slowly. Soup helps, beer doesn't.</p></dd>
+        </div>
+        <div class="kbyg-row">
+          <dt>Getting there</dt>
+          <dd><span class="fact fact--pending" data-verify="bus-frequency" title="Pending verification">TERMINAL NORTE · EVERY ~30 MIN · 5 AM–7 PM</span>
+          <p>190 km northeast of Bogotá via Tunja, 3.5–4 h by bus, COP 35,000–45,000. <span class="fact fact--pending" data-verify="bus-fare" title="Pending verification">COP 35–45K</span></p></dd>
+        </div>
+        <div class="kbyg-row">
+          <dt>When to come</dt>
+          <dd><span class="fact fact--pending" data-verify="market-day" title="Pending verification">MARKET DAY · SATURDAY</span>
+          <p>Saturday if you can. December–February and July–August are the driest windows. <span class="fact fact--pending" data-verify="dry-season" title="Pending verification">DEC–FEB · JUL–AUG</span></p></dd>
+        </div>
+        <div class="kbyg-row">
+          <dt>Weather</dt>
+          <dd><span class="fact fact--pending" data-verify="temp-range" title="Pending verification">7 °C DAWN · 19 °C MIDDAY</span>
+          <p>High-Andean, most days of the year. Bring layers, not a parka.</p></dd>
+        </div>
+        <div class="kbyg-row">
+          <dt>Money</dt>
+          <dd><span class="fact fact--pending" data-verify="market-cash" title="Pending verification">MARKET · CASH ONLY</span>
+          <p>Colombian pesos. Cards work in most restaurants; ATMs around Plaza de los Libertadores. <span class="fact fact--pending" data-verify="atm-location" title="Pending verification">ATMS · PLAZA DE LOS LIBERTADORES</span></p></dd>
+        </div>
+        <div class="kbyg-row">
+          <dt>Language</dt>
+          <dd><span class="fact">ENGLISH · EVERY VERIFIED PARTNER</span>
+          <p>Spanish on the street. English at every Verified Partner — and from us, any day, on WhatsApp.</p></dd>
+        </div>
+        <div class="kbyg-row">
+          <dt>Food safety</dt>
+          <dd><span class="fact">RULE · EAT WHERE THE DRIVERS EAT</span>
+          <p>The busiest caldo stand is the safest one. Tap water varies by neighborhood — ask us. <span class="fact fact--pending" data-verify="tap-water" title="Pending verification">TAP WATER · ASK PER BARRIO</span></p></dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- 02 GUIDES -->
+    <section class="section" id="guides" aria-labelledby="guides-h">
+      <div class="sec-head"><span class="n">02</span><h2 id="guides-h">Guides</h2></div>
+      <p class="dek">Long answers to the questions you're already googling.</p>
+      <div class="cards">
+        <a class="card" href="#" data-event="guide_click">
+          <span class="eyebrow">Getting there</span>
+          <h3>How to get from Bogotá to Duitama</h3>
+          <p>Terminals, platforms, fares, and the seat to pick for the view. Plus where the bus stops for arepas.</p>
+          <span class="fact">12 MIN READ</span>
+        </a>
+        <a class="card" href="#" data-event="guide_click">
+          <span class="eyebrow">Eat</span>
+          <h3>Where to eat in Duitama: the resident shortlist</h3>
+          <p>Nine tables, from a market stool to a Roman kitchen. With prices.</p>
+          <span class="fact">9 MIN READ</span>
+        </a>
+        <a class="card" href="#" data-event="guide_click">
+          <span class="eyebrow">Ride</span>
+          <h3>Cycling the Colombian Andes from Duitama</h3>
+          <p>Three climbs, real gradients, and the bakery rule: never pass Santa Rosa without stopping.</p>
+          <span class="fact">14 MIN READ</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 03 TRUST -->
+    <section class="section" id="trust" aria-labelledby="trust-h">
+      <div class="sec-head"><span class="n">03</span><h2 id="trust-h">Written from Duitama, not about it</h2></div>
+      <p class="dek">Visit Duitama is run from Duitama by residents who answer in English. We don't sell what we haven't walked, eaten or slept through ourselves.</p>
+      <div class="callout">
+        <span class="fact fact--pending" data-verify="distance-bogota" title="Pending verification">190 KM FROM BOGOTÁ · WRITTEN ON SITE</span>
+        <p>We answer in English, usually within the hour, 6 AM–9 PM. Every listed place has been visited in person before it appears here.</p>
+        <p class="micro-moment" style="margin-top:16px">This section was written before 8 AM, over changua at the market.</p>
+      </div>
+    </section>
+
+    <!-- 04 REAL BOYACÁ -->
+    <section class="section" id="people" aria-labelledby="people-h">
+      <div class="sec-head"><span class="n">04</span><h2 id="people-h">Real Boyacá</h2></div>
+      <p class="dek">People first, scenery later. These four are why you come.</p>
+
+      <article class="person">
+        <div class="ph ph--gastro r43" role="img" aria-label="SLOT 02 · plano medio · doña Carmen sirviendo caldo, vapor visible, luz de bombillo de plaza, 5:30 AM · 4:3">
+          <p class="slot">SLOT 02 · plano medio · doña Carmen sirviendo caldo · luz de puesto, 5:30 AM · 4:3</p>
+        </div>
+        <div class="bio">
+          <h3>doña Carmen — the market</h3>
+          <span class="fact fact--pending" data-verify="carmen-stall-years" title="Pending verification">SAME CORNER OF THE PLAZA · YEARS TBC</span>
+          <p>Rib broth, cilantro, a potato that matters. Her pot goes on before the city wakes and is scraped clean by eight.</p>
+          <p class="micro-moment quote">"If you don't finish the caldo, you don't pay me."</p>
+        </div>
+      </article>
+
+      <article class="person">
+        <div class="ph ph--gastro r43" role="img" aria-label="SLOT 03 · plano medio · Julián Tolosa emplatando en Fusionario · luz de ventana · 4:3">
+          <p class="slot">SLOT 03 · plano medio · Julián Tolosa emplatando · luz de ventana · 4:3</p>
+        </div>
+        <div class="bio">
+          <h3>Julián Tolosa — Fusionario</h3>
+          <span class="fact fact--pending" data-verify="fusionario-details" title="Pending verification">TASTING MENU · PÁRAMO INGREDIENTS</span>
+          <p>Cubios, guatila, feijoa — plated like Bogotá, priced like Boyacá.</p>
+          <p class="micro-moment quote">"People come for the páramo and stay for the cubios."</p>
+        </div>
+      </article>
+
+      <article class="person">
+        <div class="ph ph--gastro r43" role="img" aria-label="SLOT 04 · plano medio · Davide Baiocco estirando pasta, harina en el aire, luz de cocina · 4:3">
+          <p class="slot">SLOT 04 · plano medio · Davide Baiocco estirando pasta · luz de cocina · 4:3</p>
+        </div>
+        <div class="bio">
+          <h3>Davide Baiocco — Rugantino di Roma</h3>
+          <span class="fact fact--pending" data-verify="rugantino-details" title="Pending verification">FRESH PASTA · MADE DAILY</span>
+          <p>A Roman who chose Duitama. Ask him why he left Rome and he'll answer while kneading.</p>
+          <p class="micro-moment quote">"Rome taught me pasta. Duitama taught me why I make it."</p>
+        </div>
+      </article>
+
+      <article class="person">
+        <div class="ph ph--land r43" role="img" aria-label="SLOT 05 · plano medio · Jahir en la huerta de Casa Ambient, canasta de desayuno · media mañana · 4:3">
+          <p class="slot">SLOT 05 · plano medio · Jahir en la huerta de Casa Ambient · media mañana · 4:3</p>
+        </div>
+        <div class="bio">
+          <h3>Jahir — Casa Ambient</h3>
+          <span class="fact fact--pending" data-verify="casa-ambient-details" title="Pending verification">SUSTAINABLE STAY · GARDEN BREAKFAST</span>
+          <p>Sustainable rooms on the green edge of town. Breakfast is whatever the garden did that week.</p>
+          <p class="micro-moment quote">"The garden decides the breakfast, not me."</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- 05 SIGNATURE EXPERIENCE -->
+    <section class="section" id="experience" aria-labelledby="exp-h">
+      <div class="sec-head"><span class="n">05</span><h2 id="exp-h">The 5 AM Market Run</h2></div>
+      <p class="dek">Duitama's plaza de mercado with doña Carmen: caldo de costilla straight off the fire, hot chocolate with farm cheese dropped in, and the herb aisle at the hour it smells strongest.</p>
+      <div class="book">
+        <div>
+          <div class="facts-row">
+            <span class="fact fact--pending" data-verify="market-opening-hour" title="Pending verification">SATURDAYS · 5:00 AM</span>
+            <span class="fact fact--pending" data-verify="sig-duration" title="Pending verification">3 H</span>
+            <span class="fact fact--pending" data-verify="sig-capacity" title="Pending verification">MAX 6 GUESTS</span>
+          </div>
+          <div class="ph ph--gastro r43" role="img" aria-label="SLOT 02 · plano medio · doña Carmen sirviendo caldo, vapor visible, luz de bombillo de plaza, 5:30 AM · 4:3">
+            <p class="slot">SLOT 02 · plano medio · doña Carmen sirviendo caldo · 5:30 AM · 4:3</p>
+          </div>
+          <p class="desc">You'll taste before you buy, learn what the herbs are for, and eat breakfast standing where the truck drivers eat it. English the whole way.</p>
+        </div>
+        <div class="book-panel">
+          <button class="btn-cta" type="button" data-event="book_click">Book Saturday <span class="price">· COP 120,000</span></button>
+          <button class="btn-secondary" type="button" data-event="secondary_cta">Ask a question first</button>
+          <div class="seals">
+            <span class="seal"><span class="check">✓</span> Free cancellation up to 48 h before</span>
+            <span class="seal"><span class="check">✓</span> We reply in English within 1 h, 6 AM–9 PM</span>
+            <span class="seal"><span class="check">✓</span> Verified Partner · doña Carmen</span>
+          </div>
+          <p class="pay">Apple Pay · Google Pay · PSE</p>
+          <span class="fact fact--pending" data-verify="sig-price" title="Pending verification" style="align-self:center">PRICE PENDING CONFIRMATION</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 MOVE LIKE A LOCAL -->
+    <section class="section" id="move" aria-labelledby="move-h">
+      <div class="sec-head"><span class="n">06</span><h2 id="move-h">Move like a local</h2></div>
+      <p class="dek">Boyacá is Colombia's cycling heartland. These are the routes we actually ride and walk — with the food stops that make them worth it.</p>
+
+      <div class="icon-row" aria-hidden="false">
+        <span class="icon-item"><span class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l5-9 3 4 3-6 5 11"/><path d="M2 20h20"/></svg></span><span>Hiking</span></span>
+        <span class="icon-item"><span class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="17" r="3.5"/><circle cx="18" cy="17" r="3.5"/><path d="M6 17l4-8h5l3 8M10 9L8.5 6H12"/></svg></span><span>Cycling</span></span>
+        <span class="icon-item"><span class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11h14l-1.5 8h-11z"/><path d="M8 11V8a4 4 0 018 0v3"/></svg></span><span>Origin food</span></span>
+        <span class="icon-item"><span class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V10l9-6 9 6v10"/><path d="M9 20v-6h6v6"/></svg></span><span>Sustainable stay</span></span>
+        <span class="icon-item"><span class="icon-box"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6-5.5-6-10a6 6 0 0112 0c0 4.5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg></span><span>Point of interest</span></span>
+      </div>
+
+      <article class="route">
+        <div class="route-head">
+          <h3>La Rusia páramo climb</h3>
+          <span class="tag">Road · Hard</span>
+        </div>
+        <div class="facts-row" style="display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px">
+          <span class="fact fact--pending" data-verify="rusia-distance" title="Pending verification">25 KM UP</span>
+          <span class="fact fact--pending" data-verify="rusia-gain" title="Pending verification">+1,100 M</span>
+        </div>
+        <div class="alti" aria-hidden="true">
+          <svg viewBox="0 0 600 120" role="img" aria-label="Elevation profile, La Rusia climb: steady rise from 2,590 to about 3,700 m over 25 km">
+            <polyline points="0,100 60,96 120,88 200,74 280,58 360,44 440,30 520,20 600,14" fill="none" stroke="#5B6E4F" stroke-width="2.5"/>
+            <line x1="0" y1="110" x2="600" y2="110" stroke="rgba(35,44,57,0.14)"/>
+            <text x="0" y="119" font-family="IBM Plex Mono, monospace" font-size="10" fill="#4C5561">0 KM · 2,590 M</text>
+            <text x="600" y="119" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="10" fill="#4C5561">25 KM · ~3,700 M</text>
+          </svg>
+        </div>
+        <p>Frailejones at the top; fog most mornings. Agua de panela and farm cheese from the thermos at the summit — bring your own or ask us.</p>
+      </article>
+
+      <article class="route">
+        <div class="route-head">
+          <h3>Pueblito Boyacense morning loop</h3>
+          <span class="tag">Walk · Easy</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px">
+          <span class="fact fact--pending" data-verify="pueblito-distance" title="Pending verification">4 KM</span>
+          <span class="fact fact--pending" data-verify="almojabana-hour" title="Pending verification">ALMOJÁBANAS WARM UNTIL ~9 AM</span>
+        </div>
+        <p>Through the replica village and back before the buses arrive. Ends at almojábanas and coffee.</p>
+      </article>
+
+      <article class="route">
+        <div class="route-head">
+          <h3>Santa Rosa de Viterbo circuit</h3>
+          <span class="tag tag--mid">Road · Moderate</span>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:10px">
+          <span class="fact fact--pending" data-verify="santarosa-distance" title="Pending verification">32 KM ROLLING</span>
+        </div>
+        <p>Two climbs, one colonial plaza. The mid-ride stop is longaniza santarrosana — it's the point of the ride. <span class="fact fact--pending" data-verify="longaniza-detail" title="Pending verification">LONGANIZA · MID-RIDE</span></p>
+      </article>
+    </section>
+
+    <!-- 07 BEHIND -->
+    <section class="section" id="behind" aria-labelledby="behind-h">
+      <div class="sec-head"><span class="n">07</span><h2 id="behind-h">We're building this in public</h2></div>
+      <div class="callout">
+        <span class="fact">ROADMAP · STEP 9 OF 12 · PHOTOGRAPHY NEXT</span>
+        <p>Visit Duitama is pre-launch. Photography is Step 8 — which is why you're reading photo briefs instead of photos. Four partners verified so far. The rest of Duitama doesn't know how good it is yet. That's the job.</p>
+        <p>Most of this site was written between 6 and 8 AM — before the caldo runs out. <span class="fact fact--pending" data-verify="market-caldo-runout" title="Pending verification">CALDO GONE BY ~8 AM</span></p>
+      </div>
+    </section>
+
+    <!-- 08 PARTNERS -->
+    <section class="section partner" id="partners" aria-labelledby="partners-h" style="background:transparent">
+      <div class="sec-head"><span class="n">08</span><h2 id="partners-h">Run a restaurant, hotel or route in Duitama?</h2></div>
+      <p class="dek">We list local providers who serve travelers in English. Listing is free.</p>
+      <div style="margin-top:20px">
+        <a class="btn-outline" href="#" data-event="partner_signup">List your business</a>
+        <span class="note">Continues in Spanish · El registro es en español</span>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="page">
+    <div class="foot-grid">
+      <div>
+        <a class="lockup" href="#top" style="color:var(--paper)">
+          <svg viewBox="0 0 100 110" width="26" height="29" aria-hidden="true">
+            <path d="M24 30 L44 66 L80 12" fill="none" stroke="#ECEEE6" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M37 80 L37 102 A11 11 0 0 0 37 80 Z" fill="#BB8B2E"/>
+          </svg>
+          <span>Visit Duitama</span>
+        </a>
+        <p style="margin-top:12px;font-size:15px">Duitama, Boyacá, Colombia</p>
+        <span class="fact fact--pending" data-verify="altitude" title="Pending verification" style="margin-top:8px">2,590 M ASL · BOYACÁ, CO</span>
+        <div class="foot-seal">
+          <svg viewBox="0 0 100 110" width="16" height="18" aria-hidden="true">
+            <path d="M24 30 L44 66 L80 12" fill="none" stroke="#ECEEE6" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M37 80 L37 102 A11 11 0 0 0 37 80 Z" fill="#BB8B2E"/>
+          </svg>
+          Verified Partner Program
+        </div>
+      </div>
+      <div>
+        <ul>
+          <li><a href="#" data-event="whatsapp_click">WhatsApp · +57 3XX XXX XXXX <span style="font-family:var(--font-data);font-size:11px">(TBC)</span></a></li>
+          <li><a href="mailto:hello@visitduitama.com">hello@visitduitama.com</a></li>
+          <li><a href="https://instagram.com/visitduitama">@visitduitama</a></li>
+        </ul>
+        <p class="foot-small">Not sure where to start? Ask us where to eat first — everything else follows from that.</p>
+      </div>
+    </div>
+    <p class="foot-small" style="max-width:680px;margin:28px auto 0">© 2026 Visit Duitama · Made in Duitama, at 2,590 m (pending survey — see how we handle facts above).</p>
+  </div>
+</footer>
+
+<script>
+/* Analytics instrumentation stub — no tracker installed (BRIEF §7.5) */
+(function(){
+  document.addEventListener('click',function(e){
+    var el=e.target.closest('[data-event]');
+    if(el){console.log('[event]',el.getAttribute('data-event'));}
+  });
+  var fired=false;
+  window.addEventListener('scroll',function(){
+    if(fired)return;
+    var d=(window.scrollY+window.innerHeight)/document.documentElement.scrollHeight;
+    if(d>=0.5){fired=true;console.log('[event]','scroll_depth_50');}
+  },{passive:true});
+  /* margin-rail active state */
+  if('IntersectionObserver' in window){
+    var links=document.querySelectorAll('.rail a');
+    var map={};
+    links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(a){a.classList.remove('active');});
+          var a=map[en.target.id]; if(a)a.classList.add('active');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    document.querySelectorAll('main section[id]').forEach(function(s){io.observe(s);});
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visit Duitama — Comparador de direcciones (herramienta interna)</title>
+<meta name="description" content="Herramienta interna: las cuatro direcciones de landing lado a lado, con la rúbrica de evaluación del BRIEF §11.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,500&family=IBM+Plex+Mono:wght@400;500&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ECEEE6; --ui-white:#FAFAF7; --paper-deep:#E2E4D8;
+  --ink:#232C39; --ink-soft:#4C5561;
+  --terracota:#A8461F; --terracota-deep:#7E3416;
+  --verde:#5B6E4F; --ocre:#BB8B2E; --cielo:#3E6E8E; --line:rgba(35,44,57,0.14);
+  --font-authority:'Fraunces',Georgia,serif;
+  --font-ui:'Libre Franklin',system-ui,sans-serif;
+  --font-data:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-ui);background:var(--paper);color:var(--ink);font-size:15px;line-height:1.5}
+:focus-visible{outline:2px solid var(--cielo);outline-offset:2px}
+a{color:var(--cielo)}
+header{background:var(--ui-white);border-bottom:1px solid var(--line);padding:16px 20px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.lockup{display:inline-flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
+.lockup span{font-family:var(--font-authority);font-weight:600;font-size:16px}
+header .tool-tag{font-family:var(--font-data);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft)}
+.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.controls span{font-family:var(--font-data);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft)}
+.controls button{
+  font-family:var(--font-ui);font-size:13px;font-weight:600;cursor:pointer;
+  min-height:40px;padding:0 14px;border:1.5px solid var(--ink);border-radius:4px;
+  background:transparent;color:var(--ink);
+}
+.controls button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+main{padding:20px}
+.grid{display:grid;gap:20px}
+@media(min-width:800px){.grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1400px){.grid{grid-template-columns:repeat(4,1fr)}}
+.panel{background:var(--ui-white);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.panel-head h2{font-family:var(--font-authority);font-weight:600;font-size:17px}
+.panel-head .l{font-family:var(--font-data);font-size:11px;color:var(--terracota-deep)}
+.panel-head a{font-size:12px;font-weight:500}
+.frame-box{height:620px;overflow:hidden;background:var(--paper-deep);position:relative}
+.frame-box iframe{border:0;transform-origin:top left;display:block;background:var(--ui-white)}
+
+.rubric{margin-top:36px;background:var(--ui-white);border:1px solid var(--line);border-radius:6px;padding:20px;overflow-x:auto}
+.rubric h2{font-family:var(--font-authority);font-weight:600;font-size:22px}
+.rubric p.help{color:var(--ink-soft);font-size:13.5px;margin-top:6px;max-width:70ch}
+table{border-collapse:collapse;width:100%;margin-top:16px;min-width:720px}
+th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{font-family:var(--font-data);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;background:var(--paper)}
+td.crit{font-weight:500;font-size:13.5px;min-width:200px}
+td.crit small{display:block;font-weight:400;color:var(--ink-soft);font-size:12px;margin-top:2px}
+td.score{font-family:var(--font-data);font-size:14px;text-align:center;width:64px;background:var(--ui-white)}
+td.score[contenteditable]{cursor:text}
+td.score:focus{outline:2px solid var(--cielo);outline-offset:-2px}
+tr.total td{font-family:var(--font-data);font-weight:500;background:var(--paper)}
+.footnote{font-family:var(--font-data);font-size:11px;color:var(--ink-soft);margin-top:14px;letter-spacing:0.04em}
+</style>
+</head>
+<body>
+<header>
+  <a class="lockup" href="#">
+    <svg viewBox="0 0 100 110" width="26" height="29" aria-hidden="true">
+      <path d="M24 30 L44 66 L80 12" fill="none" stroke="#232C39" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M37 80 L37 102 A11 11 0 0 0 37 80 Z" fill="#A8461F"/>
+    </svg>
+    <span>Visit Duitama</span>
+  </a>
+  <span class="tool-tag">Comparador de direcciones · herramienta de decisión · no publicar</span>
+  <div class="controls" role="group" aria-label="Viewport de previsualización">
+    <span>Viewport</span>
+    <button type="button" data-w="360" aria-pressed="true">Móvil 360</button>
+    <button type="button" data-w="390" aria-pressed="false">Móvil 390</button>
+    <button type="button" data-w="1280" aria-pressed="false">Desktop 1280</button>
+  </div>
+</header>
+
+<main>
+  <div class="grid" id="grid">
+    <section class="panel" aria-label="Dirección A — The Guide">
+      <div class="panel-head">
+        <h2><span class="l">A ·</span> The Guide</h2>
+        <a href="explorations/a-the-guide.html" target="_blank" rel="noopener">Abrir sola ↗</a>
+      </div>
+      <div class="frame-box"><iframe src="explorations/a-the-guide.html" title="Dirección A — The Guide" loading="lazy"></iframe></div>
+    </section>
+    <section class="panel" aria-label="Dirección B — The Trust Bridge">
+      <div class="panel-head">
+        <h2><span class="l">B ·</span> The Trust Bridge</h2>
+        <a href="explorations/b-trust-bridge.html" target="_blank" rel="noopener">Abrir sola ↗</a>
+      </div>
+      <div class="frame-box"><iframe src="explorations/b-trust-bridge.html" title="Dirección B — The Trust Bridge" loading="lazy"></iframe></div>
+    </section>
+    <section class="panel" aria-label="Dirección C — 5:00 AM">
+      <div class="panel-head">
+        <h2><span class="l">C ·</span> 5:00 AM</h2>
+        <a href="explorations/c-five-am.html" target="_blank" rel="noopener">Abrir sola ↗</a>
+      </div>
+      <div class="frame-box"><iframe src="explorations/c-five-am.html" title="Dirección C — 5:00 AM" loading="lazy"></iframe></div>
+    </section>
+    <section class="panel" aria-label="Dirección D — The Verified Network">
+      <div class="panel-head">
+        <h2><span class="l">D ·</span> The Verified Network</h2>
+        <a href="explorations/d-verified-network.html" target="_blank" rel="noopener">Abrir sola ↗</a>
+      </div>
+      <div class="frame-box"><iframe src="explorations/d-verified-network.html" title="Dirección D — The Verified Network" loading="lazy"></iframe></div>
+    </section>
+  </div>
+
+  <section class="rubric" aria-labelledby="rubric-h">
+    <h2 id="rubric-h">Rúbrica de evaluación (BRIEF §11)</h2>
+    <p class="help">Puntuá 1–5 en cada celda (editable, solo en memoria — al recargar se pierde: anotá el resultado en <code>docs/DECISIONS.md</code>). El total se calcula solo.</p>
+    <table>
+      <thead>
+        <tr><th scope="col">#</th><th scope="col">Criterio</th><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th><th scope="col">D</th></tr>
+      </thead>
+      <tbody id="scores">
+        <tr><td>1</td><td class="crit">Test de Berlín/mercado<small>¿Los dos sienten que fue hecho para ellos?</small></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td></tr>
+        <tr><td>2</td><td class="crit">Tiempo al primer dato verificable<small>Segundos hasta ver un hecho exacto en mono</small></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td></tr>
+        <tr><td>3</td><td class="crit">Camino a la reserva<small>Toques desde el hero móvil hasta Book</small></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td></tr>
+        <tr><td>4</td><td class="crit">Test de la agencia de Bogotá<small>¿Podría haberlo hecho alguien sin presencia local?</small></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td></tr>
+        <tr><td>5</td><td class="crit">Presupuesto de performance<small>LCP &lt; 2.5 s · documento &lt; 500 KB</small></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td></tr>
+        <tr><td>6</td><td class="crit">Test del placeholder<small>¿Se sostiene sin fotografía real?</small></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td></tr>
+        <tr><td>7</td><td class="crit">Auditoría anti-pintoresca<small>Cero elementos de la lista prohibida §2.2</small></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td></tr>
+        <tr><td>8</td><td class="crit">Cobertura de pilares<small>Los cuatro pilares presentes y reconocibles</small></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td></tr>
+        <tr><td>9</td><td class="crit">Gastronomía transversal<small>¿Mesa, olor, sabor o plato en cada sección?</small></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td></tr>
+        <tr><td>10</td><td class="crit">Disciplina de color<small>Verde Reserva solo conversión · Teja solo dato</small></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td><td class="score" contenteditable="true"></td></tr>
+      </tbody>
+      <tfoot>
+        <tr class="total"><td></td><td>Total</td><td id="tA">—</td><td id="tB">—</td><td id="tC">—</td><td id="tD">—</td></tr>
+      </tfoot>
+    </table>
+    <p class="footnote">RECORDATORIO §8: si dos direcciones se parecen, una de las dos está mal ejecutada. · Dato pendiente = subrayado punteado Ruana en las páginas.</p>
+  </section>
+</main>
+
+<script>
+(function(){
+  /* viewport toggle: scale each iframe to fit its panel */
+  var buttons=document.querySelectorAll('.controls button');
+  var width=360;
+  function layout(){
+    document.querySelectorAll('.frame-box').forEach(function(box){
+      var f=box.querySelector('iframe');
+      var scale=Math.min(1,box.clientWidth/width);
+      f.style.width=width+'px';
+      f.style.height=(box.clientHeight/scale)+'px';
+      f.style.transform='scale('+scale+')';
+    });
+  }
+  buttons.forEach(function(b){
+    b.addEventListener('click',function(){
+      width=parseInt(b.getAttribute('data-w'),10);
+      buttons.forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
+      layout();
+    });
+  });
+  window.addEventListener('resize',layout);
+  layout();
+
+  /* rubric totals — in memory only, no storage */
+  var body=document.getElementById('scores');
+  body.addEventListener('input',function(){
+    var totals=[0,0,0,0],counts=[0,0,0,0];
+    body.querySelectorAll('tr').forEach(function(tr){
+      tr.querySelectorAll('td.score').forEach(function(td,i){
+        var v=parseFloat(td.textContent.trim());
+        if(!isNaN(v)&&v>=1&&v<=5){totals[i]+=v;counts[i]++;}
+      });
+    });
+    ['tA','tB','tC','tD'].forEach(function(id,i){
+      document.getElementById(id).textContent=counts[i]?totals[i]+' / '+(counts[i]*5):'—';
+    });
+  });
+})();
+</script>
+</body>
+</html>
