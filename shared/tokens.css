@@ -21,6 +21,13 @@
   --cielo:          #3E6E8E;  /* Cielo Boyacense — links y estados de foco */
   --line:           rgba(35,44,57,0.14);
 
+  /* --- Tokens derivados de accesibilidad (auditoría de contraste 2026-08) ---
+     Mismos trabajos semánticos, valores oscurecidos SOLO para texto pequeño
+     sobre fondos claros. El tono original sigue siendo el de marca para
+     bordes, subrayados, gráficos y texto sobre fondos oscuros. */
+  --ocre-text:      #8A6415;  /* Ruana como texto <18px sobre claros (el ocre puro da 2.6–2.9:1) */
+  --verde-text:     #55684A;  /* Páramo como texto <18px sobre paper-deep (el verde puro da 4.3:1) */
+
   /* --- Tipografía --- */
   --font-authority: 'Fraunces', Georgia, serif;         /* 600 romana / 500 itálica */
   --font-ui:        'Libre Franklin', system-ui, sans-serif; /* 300–700 */
@@ -64,4 +71,10 @@
 :focus-visible{
   outline:2px solid var(--cielo);
   outline-offset:2px;
+}
+
+/* Sobre fondos Madrugada/Cielo el anillo Cielo no alcanza 3:1 —
+   en contenedores oscuros el anillo pasa a Neblina. */
+.on-dark :focus-visible{
+  outline-color:var(--paper);
 }

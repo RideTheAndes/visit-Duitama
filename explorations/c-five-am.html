@@ -40,6 +40,7 @@
   --ocre:#BB8B2E; --cielo:#3E6E8E; --line:rgba(35,44,57,0.14);
   --line-light:rgba(236,238,230,0.18);
   --predawn:#2B3A4E; /* paso intermedio Madrugada→Cielo, mezcla de tokens */
+  --ocre-text:#8A6415; --verde-text:#55684A; /* derivados AA para texto pequeño sobre claros */
   --font-authority:'Fraunces',Georgia,serif;
   --font-ui:'Libre Franklin',system-ui,sans-serif;
   --font-data:'IBM Plex Mono',ui-monospace,monospace;
@@ -49,6 +50,9 @@ html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{font-family:var(--font-ui);color:var(--ink);background:var(--ink);font-size:17px;line-height:1.6}
 :focus-visible{outline:2px solid var(--cielo);outline-offset:2px}
+/* sobre Madrugada/pre-alba/Cielo el anillo Cielo no alcanza 3:1 */
+.nav :focus-visible,.s-night :focus-visible,.s-predawn :focus-visible,footer :focus-visible{outline-color:var(--paper)}
+.s-bluehour :focus-visible{outline-color:var(--ui-white)}
 .skip-link{position:absolute;left:-9999px;top:0;background:var(--paper);color:var(--ink);padding:10px 16px;z-index:100;font-size:14px;text-decoration:none}
 .skip-link:focus{left:8px;top:8px}
 
@@ -82,12 +86,12 @@ h3{font-family:var(--font-authority);font-weight:600;font-size:21px;line-height:
 .s-day{background:var(--ui-white);color:var(--ink)}
 .s-night .clock,.s-predawn .clock{color:rgba(236,238,230,0.75)}
 .s-bluehour .clock{color:rgba(250,250,247,0.85)}
-.s-firstlight .clock,.s-morning .clock,.s-day .clock{color:var(--verde)}
+.s-firstlight .clock,.s-morning .clock,.s-day .clock{color:var(--verde-text)} /* verde puro da 4.3:1 sobre paper-deep */
 .s-night a,.s-predawn a,.s-bluehour a{color:var(--paper)}
 .s-firstlight a,.s-morning a,.s-day a{color:var(--cielo)}
 .lead{font-weight:300;font-size:18px;max-width:54ch}
 .s-night .lead,.s-predawn .lead{color:rgba(236,238,230,0.82)}
-.s-bluehour .lead{color:rgba(250,250,247,0.88)}
+.s-bluehour .lead{color:var(--ui-white)} /* al 88% de alpha caía a 4.47:1 sobre Cielo */
 .s-firstlight .lead,.s-morning .lead,.s-day .lead{color:var(--ink-soft)}
 
 /* reveal only when JS is present (html.js) — no-JS keeps everything visible */
@@ -171,7 +175,7 @@ h3{font-family:var(--font-authority);font-weight:600;font-size:21px;line-height:
 @media(min-width:780px){.routes{grid-template-columns:repeat(3,1fr)}}
 .route{border:1px solid var(--line);border-radius:4px;padding:18px;background:var(--paper);display:flex;flex-direction:column;gap:10px}
 .route .tag{font-family:var(--font-data);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:4px 8px;color:var(--ink-soft);align-self:flex-start}
-.route .tag--mid{border-color:var(--ocre);color:var(--ocre)}
+.route .tag--mid{border-color:var(--ocre);color:var(--ocre-text)}
 .route p{font-size:14.5px;color:var(--ink-soft)}
 .route svg{width:100%;height:auto;display:block}
 

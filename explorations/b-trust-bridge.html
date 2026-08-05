@@ -38,6 +38,7 @@
   --terracota:#A8461F; --terracota-deep:#7E3416;
   --verde:#5B6E4F; --cta:#1F7A4D; --cta-hover:#166B41;
   --ocre:#BB8B2E; --cielo:#3E6E8E; --line:rgba(35,44,57,0.14);
+  --ocre-text:#8A6415; --verde-text:#55684A; /* derivados AA para texto pequeño sobre claros */
   --font-authority:'Fraunces',Georgia,serif;
   --font-ui:'Libre Franklin',system-ui,sans-serif;
   --font-data:'IBM Plex Mono',ui-monospace,monospace;
@@ -170,7 +171,7 @@ section{padding:56px 0}
 @media(min-width:820px){.routes{grid-template-columns:repeat(3,1fr)}}
 .route{border:1px solid var(--line);border-radius:8px;padding:18px;background:var(--ui-white);display:flex;flex-direction:column;gap:10px}
 .route .tag{font-family:var(--font-data);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:4px 8px;color:var(--ink-soft);align-self:flex-start}
-.route .tag--mid{border-color:var(--ocre);color:var(--ocre)}
+.route .tag--mid{border-color:var(--ocre);color:var(--ocre-text)}
 .route p{font-size:14.5px;color:var(--ink-soft)}
 .route svg{width:100%;height:auto;display:block}
 
@@ -188,6 +189,7 @@ section{padding:56px 0}
 
 /* footer */
 footer{background:var(--ink);color:var(--paper);padding:56px 0}
+footer :focus-visible{outline-color:var(--paper)} /* anillo Cielo no alcanza 3:1 sobre Madrugada */
 footer a{color:var(--paper)}
 footer .fact{color:var(--ocre)}
 footer .fact::before{background:var(--ocre)}

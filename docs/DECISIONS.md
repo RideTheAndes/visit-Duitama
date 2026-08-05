@@ -179,3 +179,7 @@ Sub-decisión: sobre fondos oscuros, el dato verificable viaja en un **chip de p
 - **`#FFFFFF`:** cero en las cuatro direcciones (un `#fff` accidental en el comparador se corrigió a `--ui-white`).
 - **Distinción entre direcciones:** A = documento editorial con riel · B = comercio con rostro y chat · C = narrativa cromática oscuro→claro · D = registro tabular. Ninguna comparte layout de hero ni jerarquía.
 - **Pendiente conocido:** los `og:image` apuntan a rutas futuras (Paso 8 — no hay fotos ni assets OG). Documentado en el propio HTML.
+
+## Auditoría de contraste (post-construcción) — ver `CONTRAST-AUDIT.md`
+
+**Veredicto: paleta actual aprobada; no se adopta paleta nueva.** 36/42 pares pasan AA (los estructurales, AAA). Las 6 fallas eran de uso, no de tono: Ruana y Páramo estirados a texto pequeño sobre claros, y el anillo de foco Cielo sobre fondos Madrugada. Corrección: dos tokens derivados solo-para-texto (`--ocre-text: #8A6415`, `--verde-text: #55684A`, mismos trabajos semánticos) y anillo de foco Neblina en contenedores oscuros. Los tonos originales siguen siendo los de marca para bordes, subrayados, gráficos, isotipo y texto sobre oscuro. Matriz completa, umbrales y descartes en `docs/CONTRAST-AUDIT.md`.

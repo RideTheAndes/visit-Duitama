@@ -38,6 +38,7 @@
   --terracota:#A8461F; --terracota-deep:#7E3416;
   --verde:#5B6E4F; --cta:#1F7A4D; --cta-hover:#166B41;
   --ocre:#BB8B2E; --cielo:#3E6E8E; --line:rgba(35,44,57,0.14);
+  --ocre-text:#8A6415; --verde-text:#55684A; /* derivados AA para texto pequeño sobre claros */
   --font-authority:'Fraunces',Georgia,serif;
   --font-ui:'Libre Franklin',system-ui,sans-serif;
   --font-data:'IBM Plex Mono',ui-monospace,monospace;
@@ -120,7 +121,7 @@ a.lrow:hover{background:var(--paper)}
 .lrow .dish{font-size:14px;color:var(--ink-soft)}
 .lrow--review{opacity:0.65}
 .lrow--review .name{font-weight:600}
-.badge-review{font-family:var(--font-data);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;border:1px dashed var(--ocre);color:var(--ocre);border-radius:3px;padding:3px 8px}
+.badge-review{font-family:var(--font-data);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;border:1px dashed var(--ocre-text);color:var(--ocre-text);border-radius:3px;padding:3px 8px}
 
 /* what the mark means */
 .checks{display:grid;gap:14px;margin-top:26px}
@@ -177,7 +178,7 @@ a.lrow:hover{background:var(--paper)}
 @media(min-width:820px){.routes{grid-template-columns:repeat(3,1fr)}}
 .route{border:1px solid var(--line);border-radius:4px;padding:18px;background:var(--ui-white);display:flex;flex-direction:column;gap:10px}
 .route .tag{font-family:var(--font-data);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;border:1px solid var(--line);border-radius:3px;padding:4px 8px;color:var(--ink-soft);align-self:flex-start}
-.route .tag--mid{border-color:var(--ocre);color:var(--ocre)}
+.route .tag--mid{border-color:var(--ocre);color:var(--ocre-text)}
 .route p{font-size:14.5px;color:var(--ink-soft)}
 .route svg{width:100%;height:auto;display:block}
 
@@ -191,6 +192,7 @@ a.lrow:hover{background:var(--paper)}
 
 /* partner strip — prominent, second conversion */
 .partner-strip{background:var(--ink);color:var(--paper)}
+.partner-strip :focus-visible,footer :focus-visible{outline-color:var(--paper)} /* anillo Cielo no alcanza 3:1 sobre Madrugada */
 .partner-strip .dek{color:rgba(236,238,230,0.8)}
 .partner-strip .btn-outline{border-color:var(--paper);color:var(--paper)}
 .partner-strip .btn-outline:hover{background:var(--paper);color:var(--ink)}
