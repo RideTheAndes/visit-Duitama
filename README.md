@@ -22,3 +22,5 @@ Abrí [`index.html`](index.html) (doble clic, sin servidor): muestra las cuatro 
 - `docs/PHOTO-BRIEF.md` — slots fotográficos con encuadre, sujeto y ratio (los placeholders llevan el brief encima).
 
 Sin frameworks, sin build, sin trackers. Los puntos de decisión están marcados con `data-event` para instrumentar después.
+# visit-Duitama
+El repo de Visit Duitama
