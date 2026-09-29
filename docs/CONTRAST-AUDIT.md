@@ -49,6 +49,7 @@ Auditoría de contraste de todos los pares texto/fondo y componentes UI realment
 | 4 | Páramo `#5B6E4F` como texto 12px / Neblina profunda | 4.31:1 | 4.5 | Nuevo token `--verde-text: #55684A` (4.71:1) |
 | 5 | Anillo de foco Cielo / Madrugada (footers, franjas oscuras, escenas de C) | 2.57:1 | 3.0 | En contenedores oscuros el anillo pasa a Neblina (12.03:1); sobre Cielo, a casi-blanco (5.25:1) |
 | 6 | C · lead `rgba(casi-blanco,.88)` / Cielo | 4.47:1 | 4.5 | Alpha al 100% (5.25:1) |
+| 7 | `.lrow--review` opacity en D / Neblina o casi-blanco | - | 4.5 | Se quitó opacity y se usó texto secundario `var(--ink-soft)` (6.45:1) |
 
 ## Reglas de uso resultantes
 

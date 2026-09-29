@@ -132,16 +132,17 @@ Sub-decisión: sobre fondos oscuros, el dato verificable viaja en un **chip de p
 
 ## Decisiones transversales (fase de construcción)
 
-1. **Datos no confirmados = pendientes.** El brief solo confirma la existencia de dos datos dudosos (§10), pero la regla se extiende: **toda cifra externa no verificada** (distancias, tarifas de bus, temperaturas, precios, duraciones, cupos) entra al HTML con `.fact--pending` + `data-verify` y se lista en `PENDING-FACTS.md`. Políticas propias (cancelación, tiempo de respuesta) no son pendientes: las definimos nosotros y quedan registradas en `COPY-EN.md`.
-2. **Precio en el botón (§5.4) vs honestidad (§10):** el precio de la insignia (COP 120.000) es propuesta no confirmada. Va dentro del botón Verde Reserva (la anatomía manda) y el marcador de pendiente vive en la fila de datos inmediatamente encima del botón — el botón no puede llevar subrayado punteado sin romper su lectura.
-3. **CTA de nav:** Verde Reserva en nav solo cuando el ancla lleva directo al bloque de reserva (B y D). En A y C la nav usa enlace outline neutro — disciplina conservadora de color.
-4. **Transición ES del registro de proveedores (§6.2):** el botón "List your business" lleva debajo una línea en mono: `Continues in Spanish · El registro es en español`. El viajero no la nota; el proveedor local la lee como bienvenida. El destino (página en español) queda fuera de alcance.
-5. **Barra sticky de reserva:** solo en B. §6.1 la exige en fichas de experiencia (fuera de alcance §12); en B se adelanta como parte de su apuesta de conversión y se evalúa en la rúbrica 3.
-6. **Placeholders:** `<div role="img" aria-label="[brief fotográfico]">` con gradiente de paleta + brief en mono 11px + `aspect-ratio` fijo. No se usan `<img>` hasta que existan fotos.
-7. **Íconos:** set mínimo de 5 (§3.7) inline SVG, 24×24, trazo 2px, color `currentColor` heredando Madrugada, contenedor con borde hairline. Nunca color de acento.
-8. **Quotes de proveedores:** las citas en itálica de Fraunces son borradores de copy pendientes de validación con cada proveedor — marcadas en `COPY-EN.md`, no en el HTML (no son "datos", son voz).
-9. **JS:** un único bloque de ~30 líneas por página: log de `data-event` a `console` (stub de analítica), `scroll_depth_50`, y en B el toggle de la barra sticky. Todas las animaciones en CSS bajo `@media (prefers-reduced-motion: no-preference)`.
-10. **JSON-LD:** `Organization` + `TouristDestination` en las cuatro; `Product/Offer` (precio marcado draft aquí, en el schema va el valor propuesto) y `FAQPage` donde el bloque KBYG lo soporta.
+1. **noindex en exploraciones:** quitar al lanzar.
+2. **Datos no confirmados = pendientes.** El brief solo confirma la existencia de dos datos dudosos (§10), pero la regla se extiende: **toda cifra externa no verificada** (distancias, tarifas de bus, temperaturas, precios, duraciones, cupos) entra al HTML con `.fact--pending` + `data-verify` y se lista en `PENDING-FACTS.md`. Políticas propias (cancelación, tiempo de respuesta) no son pendientes: las definimos nosotros y quedan registradas en `COPY-EN.md`.
+3. **Precio en el botón (§5.4) vs honestidad (§10):** el precio de la insignia (COP 120.000) es propuesta no confirmada. Va dentro del botón Verde Reserva (la anatomía manda) y el marcador de pendiente vive en la fila de datos inmediatamente encima del botón — el botón no puede llevar subrayado punteado sin romper su lectura.
+4. **CTA de nav:** Verde Reserva en nav solo cuando el ancla lleva directo al bloque de reserva (B y D). En A y C la nav usa enlace outline neutro — disciplina conservadora de color.
+5. **Transición ES del registro de proveedores (§6.2):** el botón "List your business" lleva debajo una línea en mono: `Continues in Spanish · El registro es en español`. El viajero no la nota; el proveedor local la lee como bienvenida. El destino (página en español) queda fuera de alcance.
+6. **Barra sticky de reserva:** solo en B. §6.1 la exige en fichas de experiencia (fuera de alcance §12); en B se adelanta como parte de su apuesta de conversión y se evalúa en la rúbrica 3.
+7. **Placeholders:** `<div role="img" aria-label="[brief fotográfico]">` con gradiente de paleta + brief en mono 11px + `aspect-ratio` fijo. No se usan `<img>` hasta que existan fotos.
+8. **Íconos:** set mínimo de 5 (§3.7) inline SVG, 24×24, trazo 2px, color `currentColor` heredando Madrugada, contenedor con borde hairline. Nunca color de acento.
+9. **Quotes de proveedores:** las citas en itálica de Fraunces son borradores de copy pendientes de validación con cada proveedor — marcadas en `COPY-EN.md`, no en el HTML (no son "datos", son voz).
+10. **JS:** un único bloque de ~30 líneas por página: log de `data-event` a `console` (stub de analítica), `scroll_depth_50`, y en B el toggle de la barra sticky. Todas las animaciones en CSS bajo `@media (prefers-reduced-motion: no-preference)`.
+11. **JSON-LD:** `Organization` + `TouristDestination` en las cuatro; `Product/Offer` (precio marcado draft aquí, en el schema va el valor propuesto) y `FAQPage` donde el bloque KBYG lo soporta.
 
 ---
 
