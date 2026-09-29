@@ -24,3 +24,17 @@ Abrí [`index.html`](index.html) (doble clic, sin servidor): muestra las cuatro 
 Sin frameworks, sin build, sin trackers. Los puntos de decisión están marcados con `data-event` para instrumentar después.
 # visit-Duitama
 El repo de Visit Duitama
+
+## Fact Verification
+
+To ensure that no unverified facts slip into the codebase without the proper `.fact--pending` markers and `data-verify` attributes, a Node script runs on CI.
+
+You can run it locally to verify your changes:
+```bash
+node tools/check-facts.mjs
+```
+
+If you fix an existing violation or need to update the baseline after an intentional change, you can update the baseline using:
+```bash
+node tools/check-facts.mjs --update-baseline
+```
