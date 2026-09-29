@@ -1,0 +1,155 @@
+[unused data-verify] PENDING-FACTS.md: unused ID "email-domain"
+[unused data-verify] PENDING-FACTS.md: unused ID "whatsapp-number"
+[unverified fact] explorations/a-the-guide.html: found "0 KM" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "14" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "190 km" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "2,590 M" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "2,590 m" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "2,590" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "2026" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "25 KM" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "25 km" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "3" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "3,700 M" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "3,700 m" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "3.5" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "35,000" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "4 h" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "4" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "45,000" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "5 AM" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "57" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "5:30 AM" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "6" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "8 AM" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "8" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "9" outside .fact--pending
+[unverified fact] explorations/a-the-guide.html: found "hello@visitduitama.com" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "0 KM" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "1 H" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "1" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "1,100 M" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "1,100 m" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "14" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "2026" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "25 KM" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "25 km" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "3" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "30" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "32 KM" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "32 km" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "35,000" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "4 KM" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "4 km" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "4" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "45,000" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "5 AM" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "5" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "57" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "5:30 AM" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "5:30" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "6" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "8 AM" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "8" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "9" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "9:14 PM" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "9:41 PM" outside .fact--pending
+[unverified fact] explorations/b-trust-bridge.html: found "hello@visitduitama.com" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "0 KM" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "00 AM" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "1 H" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "1,100 M" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "1,100 m" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "14" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "2026" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "25 KM" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "25 km" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "2:00 PM" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "3" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "30" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "32 KM" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "32 km" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "35,000" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "4 KM" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "4 km" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "4" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "45,000" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "5 AM" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "57" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "5:30 AM" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "6" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "6:00 PM" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "7 PM" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "8 AM" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "8" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "9" outside .fact--pending
+[unverified fact] explorations/c-five-am.html: found "hello@visitduitama.com" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "0 KM" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "001" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "002" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "003" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "004" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "1" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "1,100 M" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "1,100 m" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "14" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "2" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "2026" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "25 KM" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "25 km" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "3" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "30" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "32 KM" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "32 km" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "35,000" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "4 KM" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "4 km" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "4" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "45,000" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "5 AM" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "57" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "5:30 AM" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "9" outside .fact--pending
+[unverified fact] explorations/d-verified-network.html: found "hello@visitduitama.com" outside .fact--pending
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "120000"
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "190 km"
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "2,590 m"
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "3.5"
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "30"
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "35,000"
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "4"
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "45,000"
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "5 AM"
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "5:00 AM"
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "7 PM"
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "8"
+[JSON-LD exception] explorations/a-the-guide.html: found unverified fact "8,497"
+[JSON-LD exception] explorations/b-trust-bridge.html: found unverified fact "120000"
+[JSON-LD exception] explorations/b-trust-bridge.html: found unverified fact "190 km"
+[JSON-LD exception] explorations/b-trust-bridge.html: found unverified fact "2,590 m"
+[JSON-LD exception] explorations/b-trust-bridge.html: found unverified fact "3.5"
+[JSON-LD exception] explorations/b-trust-bridge.html: found unverified fact "30"
+[JSON-LD exception] explorations/b-trust-bridge.html: found unverified fact "35,000"
+[JSON-LD exception] explorations/b-trust-bridge.html: found unverified fact "4"
+[JSON-LD exception] explorations/b-trust-bridge.html: found unverified fact "45,000"
+[JSON-LD exception] explorations/b-trust-bridge.html: found unverified fact "5 AM"
+[JSON-LD exception] explorations/b-trust-bridge.html: found unverified fact "7 PM"
+[JSON-LD exception] explorations/b-trust-bridge.html: found unverified fact "8,497"
+[JSON-LD exception] explorations/c-five-am.html: found unverified fact "120000"
+[JSON-LD exception] explorations/c-five-am.html: found unverified fact "190 km"
+[JSON-LD exception] explorations/c-five-am.html: found unverified fact "2,590 m"
+[JSON-LD exception] explorations/c-five-am.html: found unverified fact "3.5"
+[JSON-LD exception] explorations/c-five-am.html: found unverified fact "30"
+[JSON-LD exception] explorations/c-five-am.html: found unverified fact "4"
+[JSON-LD exception] explorations/c-five-am.html: found unverified fact "5 AM"
+[JSON-LD exception] explorations/c-five-am.html: found unverified fact "5:00 AM"
+[JSON-LD exception] explorations/c-five-am.html: found unverified fact "7 PM"
+[JSON-LD exception] explorations/c-five-am.html: found unverified fact "8"
+[JSON-LD exception] explorations/c-five-am.html: found unverified fact "8,497"
+[JSON-LD exception] explorations/d-verified-network.html: found unverified fact "120000"
+[JSON-LD exception] explorations/d-verified-network.html: found unverified fact "190 km"
+[JSON-LD exception] explorations/d-verified-network.html: found unverified fact "3.5"
+[JSON-LD exception] explorations/d-verified-network.html: found unverified fact "30"
+[JSON-LD exception] explorations/d-verified-network.html: found unverified fact "4"
+[JSON-LD exception] explorations/d-verified-network.html: found unverified fact "5 AM"
+[JSON-LD exception] explorations/d-verified-network.html: found unverified fact "7 PM"
