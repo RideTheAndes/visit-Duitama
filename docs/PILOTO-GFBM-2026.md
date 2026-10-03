@@ -43,6 +43,14 @@ experiencia de acompañantes» (nivel 1, MVP): práctica 1 (tiempos de paso y ll
 | Coordenadas de plaza, catedral, Pueblito, Colegio Rafael Reyes y UPTC | OpenStreetMap (Nominatim), 3 oct 2026 |
 | Termales de Paipa 7:00–21:00 todos los días | termalesdepaipa.com, consultado el 3 oct 2026 |
 | 123, línea nacional de emergencias | Fuente oficial (verificación del 3 oct) |
+| Premiación hacia las 2:30 p.m. (tentativa) | Sergio, 3 oct 2026 |
+| Cronometraje y resultados: Finalap (de Deportec) | Sergio («Final Lab, el mismo de Portec») + finalap.com, que tiene eventos GFBM 2016–2025 |
+| La Ciclería Café Taller, Cra. 16 # 19-28: casa del GFBM, abierta vie y sáb, Café Boyacense de Moniquirá | Sergio, 3 oct 2026; dirección también en `EVENT.contact` del repo gfbm. Coordenadas aproximadas (TripAdvisor/Restaurant Guru) |
+| Rugantino di Roma, Cra. 13 # 17A-23, horario | rugantinodiroma.com/contactenos; coordenadas OSM |
+| Fusionario Casa, Cl. 13 # 17-26 | Restaurant Guru (horario sin confirmar) |
+| Curva del Divino Niño: sopa gratis (casi siempre mondongo), caminata guiada | Sergio, 3 oct 2026 |
+| La curva está en la subida al Cogollo (km 133–138 GF; base en el km 93,4 de 103,1 del GPX del MF) | Inferencia: crono 5 de la guía + Boyacá 7 Días (2020) ubica la imagen del Divino Niño en el sector El Cogollo, que el GPX cruza en el km 135. **Falta la ubicación exacta** |
+| Hotel Nivari Duitama, 1,3 km de la salida, Cra. 13 # 18-191 | `EVENT.hotel` del repo gfbm |
 
 **Descartado por la verificación del 3 oct:** la entrada al Pueblito de $7.000 (en 2024 era $6.000;
 2026 sin dato), las visitas del Viñedo de Puntalarga (un blog de sep 2026 dice que se suspendieron),
@@ -56,6 +64,10 @@ verificada; Culturama es el Instituto de Cultura y Bellas Artes de Duitama).
 - Seguimiento en vivo por chip: preguntar a la organización quién cronometra y si hay enlace público.
 - Hora de la premiación y horas de reapertura de vías (Tránsito / PMU).
 - Punto de reencuentro: los tótems por letra del apellido (práctica 4) dependen de la organización.
+- Curva del Divino Niño: coordenadas exactas, hora y punto de encuentro de la caminata guiada (Sergio).
+- «Alma»: no aparece en Duitama en ninguna fuente; falta dirección o Instagram (Sergio).
+- Marcas aliadas de la Expo Bici y de gastronomía (vie–dom): las pasa Sergio.
+- Canal de contacto: el WhatsApp de Sergio (falta el número).
 
 ## Siguiente
 
