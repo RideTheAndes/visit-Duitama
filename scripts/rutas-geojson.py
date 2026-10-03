@@ -55,4 +55,14 @@ for id_, archivo in (('gran-fondo', 'GranFondo2026.gpx'), ('medio-fondo', 'Medio
                      'coordinates': [[round(p[1], 5), round(p[0], 5)] for p in simp]},
     })
     print(id_, len(pts), '->', len(simp), 'puntos;', round(km, 1), 'km; salida a', feats[-1]['properties']['ele_salida_m'], 'm')
+# La subida al Cogollo (km 133–138 del Gran Fondo, crono 5 de la guía): ahí está la
+# Curva del Divino Niño, donde la organización monta la barra y reparte sopa.
+gf = leer(f'{carpeta}/GranFondo2026.gpx')
+acum = [0.0]
+for i in range(1, len(gf)):
+    acum.append(acum[-1] + dist(gf[i - 1], gf[i]))
+tramo = [p for p, c in zip(gf, acum) if 133000 <= c <= 138000]
+tramo = tramo[::3] + [tramo[-1]]
+feats.append({'type': 'Feature', 'properties': {'id': 'cogollo', 'km': '133-138'},
+              'geometry': {'type': 'LineString', 'coordinates': [[round(p[1], 5), round(p[0], 5)] for p in tramo]}})
 json.dump({'type': 'FeatureCollection', 'features': feats}, open(salida, 'w'), separators=(',', ':'))

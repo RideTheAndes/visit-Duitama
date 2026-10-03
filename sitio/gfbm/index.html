@@ -145,6 +145,17 @@ legend{font-weight:800;margin-bottom:8px}
 .paso-lista time{font:500 14px "IBM Plex Mono",monospace;color:var(--amarillo)}
 .paso-lista small{display:block;color:var(--texto-inv-suave);font-size:13px}
 .paso-lista .corte-mal time{color:#ff8a80}
+.paso-lista .curva{background:rgba(255,200,18,.12);margin:0 -10px;padding-left:10px;padding-right:10px;border-radius:8px}
+.curva-sec{background:var(--amarillo);color:var(--noche)}
+.curva-sec .seccion__cabeza .ceja{color:var(--noche)}
+.curva-sec .seccion__cabeza p{color:#2b2a10}
+.curva-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+@media (min-width:860px){.curva-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.curva-sec .tarjeta{box-shadow:none;border-color:rgba(3,24,71,.15)}
+.curva-sec .tarjeta b{display:block;font-weight:900;font-size:19px;margin-bottom:4px}
+.curva-sec .tarjeta p{margin:0;color:var(--texto-suave);font-size:15.5px}
+.hora-curva{margin-top:16px;padding:14px 16px;border-radius:12px;background:var(--noche);color:#fff;font-weight:800}
+.hora-curva a{color:var(--amarillo)}
 .nota{font-size:14px;color:var(--texto-suave);margin-top:12px}
 .resultado .nota{color:var(--texto-inv-suave)}
 .btn--cal{margin-top:16px;background:#fff;color:var(--noche);min-height:44px;font-size:15px}
@@ -224,6 +235,7 @@ legend{font-weight:800;margin-bottom:8px}
     </a>
     <nav class="atajos" aria-label="Secciones">
       <a href="#llegada">¿A qué hora llega?</a>
+      <a href="#divino-nino">Divino Niño</a>
       <a href="#domingo">Domingo</a>
       <a href="#agenda">Agenda</a>
       <a href="#planes">Planes</a>
@@ -242,7 +254,7 @@ legend{font-weight:800;margin-bottom:8px}
       <p class="entrada">Para quien acompaña: a qué hora llega, qué calles se cierran el domingo y qué hacer mientras pedalea. Todo en una página, pensada para el celular.</p>
       <div class="botones">
         <a class="btn btn--amarillo" href="#llegada" data-evento="heroe-llegada">¿A qué hora llega?</a>
-        <a class="btn btn--borde" href="#domingo" data-evento="heroe-domingo">Domingo: calles cerradas</a>
+        <a class="btn btn--borde" href="#divino-nino" data-evento="heroe-divino-nino">Curva del Divino Niño</a>
       </div>
       <ul class="datos-heroe">
         <li class="dato">Dom 11 · salida 6:00 a.m.</li>
@@ -313,6 +325,24 @@ legend{font-weight:800;margin-bottom:8px}
     </div>
   </section>
 
+  <!-- Curva del Divino Niño -->
+  <section class="seccion curva-sec" id="divino-nino">
+    <div class="envoltura">
+      <div class="seccion__cabeza">
+        <span class="ceja">Domingo 11 · subida al Cogollo</span>
+        <h2>Ven a la Curva del Divino Niño</h2>
+        <p>Es la barra del Gran Fondo: la curva se llena de gente que grita y anima a cada ciclista, como en las grandes carreras. Queda en la subida al Cogollo, el último esfuerzo antes de bajar a la meta.</p>
+      </div>
+      <div class="curva-grid">
+        <div class="tarjeta"><b>Sopa gratis</b><p>Para todas las personas que acompañan en la curva. Casi siempre es mondongo.</p></div>
+        <div class="tarjeta"><b>Caminata guiada</b><p>Sube a pie con alguien del equipo del Gran Fondo. <span class="pendiente">Hora y punto de encuentro</span></p></div>
+        <div class="tarjeta"><b>Solo a pie</b><p>La subida es parte de la ruta y está cerrada al tráfico. Nada de carro ni moto.</p></div>
+      </div>
+      <p class="hora-curva" id="hora-curva">Calcula <a href="#llegada">arriba</a> a qué hora pasa tu ciclista por la subida al Cogollo.</p>
+      <p class="nota" style="color:#2b2a10">Del Cogollo a la meta hay unos 10 km: primero termina de subir y después baja en descenso controlado. Si lo ves en la curva y quieres recibirlo en la meta, baja apenas pase. <span class="pendiente">Ubicación exacta de la curva en el mapa</span></p>
+    </div>
+  </section>
+
   <!-- Domingo -->
   <section class="seccion seccion--alt" id="domingo">
     <div class="envoltura">
@@ -344,7 +374,7 @@ legend{font-weight:800;margin-bottom:8px}
         </div>
         <div class="regla">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l7-14 3 6 2-3 4 11z"/><path d="M9 20l2-4"/></svg>
-          <div><b>Los últimos kilómetros bajan del Cogollo</b><p>El final es un descenso controlado desde el mirador hasta la meta. El mejor sitio para verlo llegar es la meta, no la subida.</p></div>
+          <div><b>Al Cogollo se sube a pie</b><p>Antes de la meta, la ruta sube al Cogollo y baja en descenso controlado desde el mirador. En la subida está la <a href="#divino-nino">Curva del Divino Niño</a>: ve caminando.</p></div>
         </div>
       </div>
 
@@ -353,7 +383,7 @@ legend{font-weight:800;margin-bottom:8px}
         <button type="button" id="btn-ciudad">Duitama</button>
         <button type="button" id="btn-ruta">Toda la ruta</button>
         <button type="button" id="btn-yo" data-evento="ubicacion">¿Dónde estoy?</button>
-        <span class="leyenda"><span><i style="background:var(--gf)"></i>Gran Fondo</span><span><i style="background:var(--mf)"></i>Medio Fondo</span></span>
+        <span class="leyenda"><span><i style="background:var(--gf)"></i>Gran Fondo</span><span><i style="background:var(--mf)"></i>Medio Fondo</span><span><i style="background:var(--amarillo);height:7px"></i>Subida al Cogollo (Divino Niño)</span></span>
       </div>
       <p class="nota">Ruta: track oficial del GFBM 2026. Las horas de reapertura de cada vía las define Tránsito: <span class="pendiente">las publicamos aquí apenas las tengamos</span></p>
     </div>
@@ -388,6 +418,7 @@ legend{font-weight:800;margin-bottom:8px}
           <div class="hito"><time>6:00</time><div><b>Sale el Gran Fondo <span class="chip chip--gf">GF</span></b><small>143,5 km</small></div></div>
           <div class="hito"><time>6:15</time><div><b>Sale el Medio Fondo <span class="chip chip--mf">MF</span></b><small>100 km</small></div></div>
           <div class="hito"><time>10:30</time><div><b>Corte en Monguí <span class="chip chip--gf">GF</span></b><small>Quien no pase a tiempo sube al bus escoba.</small></div></div>
+          <div class="hito"><time>Mañana</time><div><b>Barra en la Curva del Divino Niño</b><small>Subida al Cogollo, con sopa gratis para quien acompaña. <a href="#divino-nino" style="color:var(--amarillo)">Detalles</a>.</small></div></div>
           <div class="hito"><time>12:00</time><div><b>Corte en Tobasía <span class="chip chip--gf">GF</span> <span class="chip chip--mf">MF</span></b><small>Igual: bus escoba o sigue bajo su propia responsabilidad.</small></div></div>
           <div class="hito"><time>9:30</time><div><b>Primeras llegadas, aproximadamente</b><small>Calcula la de tu ciclista <a href="#llegada" style="color:var(--amarillo)">arriba</a>.</small></div></div>
           <div class="hito"><time>2:30</time><div><b>Premiación</b><small>Hora tentativa: la organización la confirma en sus canales oficiales.</small></div></div>
@@ -427,12 +458,12 @@ legend{font-weight:800;margin-bottom:8px}
         </article>
         <article class="tarjeta plan">
           <span class="para">Para quien quiere vivir la carrera</span>
-          <h3>Verlo salir y verlo llegar</h3>
+          <h3>Salida, curva y meta</h3>
           <ol>
-            <li><b>5:30 · a la salida</b>Antes de que cierren las vías. Abrígate: la salida está a 2.531 m.</li>
-            <li><b>6:00 y 6:15</b>Sale el Gran Fondo y, un cuarto de hora después, el Medio Fondo.</li>
-            <li><b>Desayuno y siesta</b>Tienes entre tres y siete horas. No intentes alcanzarlo en la ruta.</li>
-            <li><b>Primeros a la meta</b>A 32 km/h de promedio, los más rápidos del Medio Fondo llegarían hacia las 9:30. Busca tu sitio temprano.</li>
+            <li><b>5:30 · a la salida</b>Antes de que cierren las vías. Abrígate: la salida está a 2.531 m. A las 6:00 sale el Gran Fondo y a las 6:15, el Medio Fondo.</li>
+            <li><b>Desayuno y descanso</b>Tienes entre tres y siete horas. No intentes alcanzarlo en carro por la ruta.</li>
+            <li><b>A la Curva del Divino Niño</b>Sube a pie a la subida al Cogollo, con sopa gratis y la barra del Gran Fondo. <a href="#divino-nino">Detalles</a>.</li>
+            <li><b>A la meta</b>Del Cogollo a la meta hay unos 10 km: baja apenas pase.</li>
           </ol>
         </article>
       </div>
@@ -465,7 +496,21 @@ legend{font-weight:800;margin-bottom:8px}
           <h3 style="margin-top:6px">La Ciclería Café Taller</h3>
           <p>Desde aquí se organiza el Gran Fondo Boyacá Mundial. El viernes y el sábado está abierta para que conozcas por dentro el cuartel general de la carrera, con Café Boyacense de Moniquirá.</p>
           <p class="dato">Cra. 16 # 19-28, Duitama</p>
-          <p><a class="ir" href="https://www.google.com/maps/search/?api=1&amp;query=La+Cicler%C3%ADa+Caf%C3%A9+Taller+Duitama" rel="noopener" data-evento="aliado-cicleria">Cómo llegar</a></p>
+          <p><a class="ir" href="https://www.google.com/maps/dir/?api=1&amp;destination=5.82900,-73.03080" rel="noopener" data-evento="aliado-cicleria">Cómo llegar</a></p>
+        </article>
+        <article class="tarjeta lugar">
+          <span class="etiqueta">Restaurante aliado · italiano</span>
+          <h3>Rugantino di Roma</h3>
+          <p>Pizza, pasta y lasaña. Abre de jueves a domingo y festivos de 12:00 m. a 9:30 p.m.; martes y miércoles, desde las 4:30 p.m.</p>
+          <p class="dato">Cra. 13 # 17A-23</p>
+          <p><a class="ir" href="https://www.instagram.com/rugantinodiroma/" rel="noopener" data-evento="aliado-rugantino">@rugantinodiroma</a> · <a class="ir" href="https://www.google.com/maps/dir/?api=1&amp;destination=5.83073,-73.03336" rel="noopener">Cómo llegar</a></p>
+        </article>
+        <article class="tarjeta lugar">
+          <span class="etiqueta">Restaurante aliado · cocina fusión</span>
+          <h3>Fusionario Casa</h3>
+          <p>Cocina de fusión. Domingo al mediodía; viernes y sábado, almuerzo y cena. <span class="pendiente">Horario exacto</span></p>
+          <p class="dato">Cl. 13 # 17-26</p>
+          <p><a class="ir" href="https://www.instagram.com/fusionario_casa/" rel="noopener" data-evento="aliado-fusionario">@fusionario_casa</a> · <a class="ir" href="https://www.google.com/maps/dir/?api=1&amp;destination=5.82528,-73.03498" rel="noopener">Cómo llegar</a></p>
         </article>
         <article class="tarjeta lugar">
           <span class="etiqueta">Hotel aliado</span>

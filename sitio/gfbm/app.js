@@ -23,6 +23,7 @@
         { km: 77, nombre: 'Monguí', corte: [10, 30] },
         { km: 112, nombre: 'Tobasía', corte: [12, 0] },
         { km: 123, nombre: 'Santa Rosa' },
+        { km: 133, nombre: 'Subida al Cogollo', nota: 'Pasa por la Curva del Divino Niño', curva: true },
         { km: 138, nombre: 'Mirador del Cogollo', nota: 'Empieza el descenso a Duitama' }
       ]
     },
@@ -36,6 +37,8 @@
         { km: 50, nombre: 'Puente Reyes', nota: 'Sigue hacia Corrales' },
         { km: 73, nombre: 'Tobasía', corte: [12, 0] },
         { km: 82, nombre: 'Santa Rosa' },
+        // Base del Cogollo: 93,4 de 103,1 km en el GPX, o sea el 90,6 % del recorrido.
+        { km: 91, nombre: 'Subida al Cogollo', nota: 'Pasa por la Curva del Divino Niño', curva: true },
         { km: 97, nombre: 'Mirador del Cogollo', nota: 'Empieza el descenso a Duitama' }
       ]
     }
@@ -100,6 +103,7 @@
     var pasos = $('#res-pasos');
     pasos.innerHTML = '';
     var alertas = [];
+    var curva = null;
     var filas = [{ km: 0, nombre: 'Salida', nota: 'Frente a la Cámara de Comercio' }].concat(c.puntos, [{ km: c.km, nombre: 'Meta', nota: 'En el mismo sitio de la salida' }]);
     filas.forEach(function (p) {
       var t = salida + (p.km / v) * 60;
@@ -114,9 +118,12 @@
           alertas.push('A ese ritmo no alcanza el corte de ' + p.nombre + ' (' + hora(lim).larga + '). Necesita un promedio de al menos ' + necesita.toFixed(1).replace('.', ',') + ' km/h hasta ahí; si no llega a tiempo, lo recoge el bus escoba.');
         }
       }
+      if (p.curva) { li.className = 'curva'; curva = t; }
       li.innerHTML = '<time>' + hora(t).corta + '</time><span>' + p.nombre + ' <small>km ' + String(p.km).replace('.', ',') + (nota ? ' · ' + nota : '') + '</small></span>';
       pasos.appendChild(li);
     });
+    var enCurva = document.getElementById('hora-curva');
+    if (enCurva && curva) enCurva.textContent = c.nombre + ' a ' + v.toFixed(v % 1 ? 1 : 0).replace('.', ',') + ' km/h: pasa por la subida al Cogollo hacia las ' + hora(curva).larga;
     $('#res-alerta').innerHTML = alertas.map(function (a) { return '<div class="alerta">' + a + '</div>'; }).join('');
 
     ultimo = { c: c, estar: estar, tarde: arriba5(tarde), llega: llega };
@@ -198,9 +205,10 @@
         maxZoom: 19, subdomains: 'abcd',
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
       }).addTo(mapa);
-      var colores = { 'gran-fondo': '#4481c2', 'medio-fondo': '#3ba935' };
+      var colores = { 'gran-fondo': '#4481c2', 'medio-fondo': '#3ba935', 'cogollo': '#ffc812' };
       capaRuta = L.geoJSON(rutas, {
-        style: function (f) { return { color: colores[f.properties.id], weight: f.properties.id === 'gran-fondo' ? 5 : 4, opacity: .85 }; }
+        style: function (f) { return { color: colores[f.properties.id], weight: f.properties.id === 'cogollo' ? 9 : (f.properties.id === 'gran-fondo' ? 5 : 4), opacity: f.properties.id === 'cogollo' ? .95 : .85 }; },
+        onEachFeature: function (f, capa) { if (f.properties.id === 'cogollo') capa.bindPopup('<b>Subida al Cogollo</b><br>Aquí está la Curva del Divino Niño: la barra del Gran Fondo, con sopa para quien acompaña. Se sube a pie.'); }
       }).addTo(mapa);
       var icono = function (color, texto) {
         return L.divIcon({ className: '', iconSize: [30, 30], iconAnchor: [15, 15],
