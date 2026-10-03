@@ -155,6 +155,17 @@ p{margin:0 0 12px}
 .resultados small{color:var(--apagado);font-weight:500}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
+/* Dos caminos: animar o conocer */
+.caminos{margin-bottom:16px}
+.caminos__pregunta{font-weight:800;font-size:18px;margin:0 0 10px}
+.caminos__opciones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.camino{display:flex;flex-direction:column;gap:4px;min-height:96px;padding:14px;border-radius:var(--radio);text-decoration:none}
+.camino b{font-weight:900;font-size:18px;line-height:1.1}
+.camino span{font-weight:600;font-size:13.5px;line-height:1.3}
+.camino--animar{background:var(--ultramar);color:#fff}
+.camino--animar span{color:#dfe3ff}
+.camino--conocer{background:var(--maiz);color:var(--tinta)}
+
 /* Categorías y tarjetas del inicio */
 .inicio{padding:18px 0 8px}
 .chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 16px 4px;margin:0 auto;max-width:var(--ancho)}
@@ -357,8 +368,15 @@ legend{font-weight:800;margin-bottom:8px}
   </div>
 
   <section class="inicio" aria-label="Lo principal">
+    <div class="envoltura caminos">
+      <p class="caminos__pregunta">¿Qué quieres hacer mientras pedalea?</p>
+      <div class="caminos__opciones">
+        <a class="camino camino--animar" href="#divino-nino" data-evento="camino-animar"><b>Verlo y animarlo</b><span>Salida, Curva del Divino Niño y meta</span></a>
+        <a class="camino camino--conocer" href="#planes" data-evento="camino-conocer"><b>Conocer Duitama</b><span>Planes a pie y dónde comer</span></a>
+      </div>
+    </div>
     <nav class="chips" aria-label="Categorías">
-      <a class="activo" href="#divino-nino">Ver la carrera</a>
+      <a href="#divino-nino">Ver la carrera</a>
       <a href="#llegada">¿A qué hora llega?</a>
       <a href="#domingo">Domingo sin carro</a>
       <a href="#aliados">Comer</a>

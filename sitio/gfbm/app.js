@@ -49,6 +49,8 @@
   // antes del extremo temprano (unos 45 min antes de la hora estimada).
   var MARGEN = 0.08;
   var ANTES_MIN = 15;
+  // Caminata de la Cámara de Comercio a la curva: ~4 km y 210 m de subida.
+  var CAMINATA_CURVA_MIN = 75;
 
   var $ = function (s) { return document.querySelector(s); };
 
@@ -124,7 +126,13 @@
       pasos.appendChild(li);
     });
     var enCurva = document.getElementById('hora-curva');
-    if (enCurva && curva) enCurva.textContent = c.nombre + ' a ' + v.toFixed(v % 1 ? 1 : 0).replace('.', ',') + ' km/h: pasa por la Curva del Divino Niño hacia las ' + hora(curva).larga;
+    if (enCurva && curva) {
+      // Para llegar antes que él: el extremo temprano de su paso, menos la caminata
+      // (unos 4 km con 210 m de subida desde la Cámara de Comercio).
+      var tempranoCurva = salida + (curva - salida) * (1 - MARGEN);
+      var salir = abajo5(tempranoCurva - CAMINATA_CURVA_MIN);
+      enCurva.textContent = c.nombre + ' a ' + v.toFixed(v % 1 ? 1 : 0).replace('.', ',') + ' km/h: pasa por la Curva del Divino Niño hacia las ' + hora(curva).larga + '. Para verlo, sal de la Cámara de Comercio a más tardar a las ' + hora(salir).larga + '.';
+    }
     $('#res-alerta').innerHTML = alertas.map(function (a) { return '<div class="alerta">' + a + '</div>'; }).join('');
 
     ultimo = { c: c, estar: estar, tarde: arriba5(tarde), llega: llega };
