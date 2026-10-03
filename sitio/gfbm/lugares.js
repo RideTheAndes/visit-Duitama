@@ -4,6 +4,8 @@
  * lugar con coordenadas verificadas. Campos: nombre, lat, lon, texto, letra, color.
  */
 window.VISITDUITAMA_LUGARES = [
+  // Coordenadas de Sergio (3 oct 2026); el track pasa a 10 m.
+  { nombre: 'Curva del Divino Niño', lat: 5.857265, lon: -73.025647, letra: '★', color: '#ffc812', texto: 'La barra del Gran Fondo, con sopa de leña gratis para quien acompaña. Km 136 del Gran Fondo, km 94 del Medio Fondo.' },
   { nombre: 'Plaza de los Libertadores', lat: 5.82775, lon: -73.03391, letra: 'P', color: '#A8461F', texto: 'Centro de Duitama' },
   { nombre: 'Catedral de San Lorenzo Mártir', lat: 5.82840, lon: -73.03420, letra: '✝', color: '#A8461F', texto: 'Frente a la plaza' },
   { nombre: 'Pueblito Boyacense', lat: 5.82535, lon: -73.01870, letra: 'B', color: '#A8461F', texto: 'Vereda Tocogua · horario 2026 por confirmar' },
