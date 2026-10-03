@@ -4,8 +4,8 @@
   "start_url": "/gfbm/?origen=pantalla",
   "scope": "/gfbm/",
   "display": "standalone",
-  "background_color": "#031847",
-  "theme_color": "#031847",
+  "background_color": "#3341F0",
+  "theme_color": "#3341F0",
   "lang": "es-CO",
   "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
 }

@@ -1,8 +1,8 @@
 /* Modo sin señal: la página se guarda la primera vez que se abre con señal.
  * HTML: primero la red y, si no hay, la copia. Lo demás: la copia y se
  * actualiza por detrás. Cambiar VERSION al publicar cambios grandes. */
-var VERSION = 'gfbm-2026-10-03d';
-var BASICOS = ['/gfbm/', '/gfbm/app.js', '/gfbm/lugares.js', '/gfbm/rutas.json', '/favicon.svg'];
+var VERSION = 'gfbm-2026-10-03e';
+var BASICOS = ['/gfbm/', '/gfbm/app.js', '/gfbm/lugares.js', '/gfbm/rutas.json', '/gfbm/portada-780.webp', '/favicon.svg'];
 
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(VERSION).then(function (c) { return c.addAll(BASICOS); }).then(function () { return self.skipWaiting(); }));

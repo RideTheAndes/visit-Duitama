@@ -15,17 +15,14 @@ experiencia de acompañantes» (nivel 1, MVP): práctica 1 (tiempos de paso y ll
 2. **GitHub Pages y no Netlify**: el sitio del GFBM gasta créditos de Netlify en su semana más
    cargada y un segundo sitio en el mismo saldo podía apagarlo. El dominio está en Cloudflare (DNS
    solo, nube gris) apuntando a GitHub Pages.
-3. **Estética del GFBM, firma de Visit Duitama.** Archivo, azul noche, amarillo y GF azul / MF verde
-   salen de `src/styles/global.css` del repo `gfbm`, para que el acompañante reconozca el evento. Se
-   conservan el isotipo y el punto de dato (BRIEF §3.3–3.4) y el subrayado punteado Ruana para lo
-   pendiente. Esto **suspende para el piloto** las reglas de color del BRIEF §3.1. No hay
-   botón de compra: Visit Duitama orienta, no vende (Ley 300/1996 y Ley 2068/2020, ver la investigación).
+3. **Identidad propia, decidida con Sergio el 3 oct (tarde), tras cuatro rondas en el lienzo «Identidad Visit Duitama»** (https://claude.ai/artifact/QQNrHtWGQD7gF6yFDWfEfp). Dirección G «Destino» (como Visit Bogotá: foto, titular con la búsqueda, buscador, categorías, tarjetas): ultramar #3341F0 + maíz #FFC93C, tinta #12131A. Hanken Grotesk para leer y **Ultra** para el letrero «DUITAMA» con la base en arco (guiño al UTAH de Visit Utah, pero como texto: Google lo lee) y las cifras grandes. La bandera de Duitama (Acuerdo 022 de 1961: verde mitad, negro y rojo cuartos; tonos del escudo de Wikimedia #01A350 / #1A1A1A / #ED1C24) solo como el punto de «visit·duitama» y el favicon. Las almenas de la torre del escudo separan secciones. El rojo de la bandera marca los avisos (vías cerradas). Deja atrás el BRIEF (terracota, Fraunces, Plex Mono) y la estética del GFBM. No hay botón de compra: Visit Duitama orienta, no vende (Ley 300/1996 y Ley 2068/2020).
 4. **Español primero.** El 70 % del público del GFBM es de Bogotá (Plausible, sep 2026). El inglés
    del BRIEF queda para la landing definitiva.
 5. **Analítica**: Cloudflare Web Analytics, sitio `visitduitama.com` (sin cookies, solo páginas vistas).
    Los atajos `/qr`, `/ig`, `/web` y `/kit` redirigen a `/gfbm/` y cuentan cada uno como página
    propia: así se sabe de dónde llega la gente sin parámetros.
-6. **Sin señal**: un service worker guarda la página la primera vez que se abre (`sitio/gfbm/sw.js`).
+6. **SEO**: título y descripción con la búsqueda real («Qué hacer en Duitama durante el Gran Fondo…»), JSON-LD (WebPage, SportsEvent, TouristDestination con atracciones, ItemList de aliados), `robots.txt` y `sitemap.xml`. Falta dar de alta el dominio en Search Console (necesita la cuenta de Google de Sergio).
+7. **Sin señal**: un service worker guarda la página la primera vez que se abre (`sitio/gfbm/sw.js`).
    El domingo la red se satura cerca de la meta. Si se cambia algo grande, hay que subir `VERSION`.
 
 ## De dónde sale cada dato

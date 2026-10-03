@@ -206,17 +206,17 @@
         maxZoom: 19, subdomains: 'abcd',
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
       }).addTo(mapa);
-      var colores = { 'gran-fondo': '#4481c2', 'medio-fondo': '#3ba935', 'cogollo': '#ffc812' };
+      var colores = { 'gran-fondo': '#4481c2', 'medio-fondo': '#3ba935', 'cogollo': '#FFC93C' };
       capaRuta = L.geoJSON(rutas, {
         style: function (f) { return { color: colores[f.properties.id], weight: f.properties.id === 'cogollo' ? 9 : (f.properties.id === 'gran-fondo' ? 5 : 4), opacity: f.properties.id === 'cogollo' ? .95 : .85 }; },
         onEachFeature: function (f, capa) { if (f.properties.id === 'cogollo') capa.bindPopup('<b>Subida al Cogollo</b><br>Crono 5 del Gran Fondo. La Curva del Divino Niño está a mitad de la subida.'); }
       }).addTo(mapa);
       var icono = function (color, texto) {
         return L.divIcon({ className: '', iconSize: [30, 30], iconAnchor: [15, 15],
-          html: '<div style="width:30px;height:30px;border-radius:50%;background:' + color + ';color:#fff;border:3px solid #fff;box-shadow:0 1px 6px rgba(0,0,0,.35);font:800 13px/24px Archivo,sans-serif;text-align:center">' + texto + '</div>' });
+          html: '<div style="width:30px;height:30px;border-radius:50%;background:' + color + ';color:' + (color === '#FFC93C' ? '#12131A' : '#fff') + ';border:3px solid #fff;box-shadow:0 1px 6px rgba(0,0,0,.35);font:800 13px/24px \'Hanken Grotesk\',sans-serif;text-align:center">' + texto + '</div>' });
       };
       var gmaps = function (lat, lon) { return 'https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lon + '&travelmode=walking'; };
-      L.marker(SALIDA, { icon: icono('#031847', '★'), zIndexOffset: 1000 }).addTo(mapa)
+      L.marker(SALIDA, { icon: icono('#12131A', '★'), zIndexOffset: 1000 }).addTo(mapa)
         .bindPopup('<b>Salida y meta</b><br>Frente a la Cámara de Comercio, Transversal 19 # 23-141<br><a href="' + gmaps(SALIDA[0], SALIDA[1]) + '" target="_blank" rel="noopener">Cómo llegar a pie</a>');
       LUGARES.forEach(function (l) {
         L.marker([l.lat, l.lon], { icon: icono(l.color || '#A8461F', l.letra || '•') }).addTo(mapa)
@@ -263,7 +263,72 @@
     }
   }
 
+  // ---------- Buscador ----------
+  // Lo que la gente escribe → la sección que lo responde. Sin servidor.
+  var INDICE = [
+    { t: 'Curva del Divino Niño', s: 'Barra, sopa de leña gratis', h: '#divino-nino', k: 'curva divino nino sopa barra ver carrera animar alentar cogollo mondongo gratis' },
+    { t: '¿A qué hora llega?', s: 'Calculadora de llegada', h: '#llegada', k: 'hora llega llegada calcular calculadora tiempo meta cuanto tarda' },
+    { t: 'Domingo sin carro', s: 'Vías cerradas, parqueaderos y mapa', h: '#domingo', k: 'vias cierre cierres cerradas transito carro parqueadero parqueo parquear domingo mapa ruta moverse' },
+    { t: 'Agenda del fin de semana', s: 'Kits, Expo Bici, rodada, premiación', h: '#agenda', k: 'agenda horario horarios kit kits expo feria rodada viernes sabado domingo premiacion salida' },
+    { t: 'Planes a pie', s: 'Café, niños, salida y meta', h: '#planes', k: 'planes plan ninos familia desayuno desayunar cafe centro plaza catedral' },
+    { t: 'Para la víspera', s: 'Pueblito, termales, Pantano de Vargas', h: '#vispera', k: 'pueblito boyacense termales paipa pantano vargas turismo pasear visitar' },
+    { t: 'La Ciclería Café Taller', s: 'La casa del Gran Fondo', h: '#aliados', k: 'cicleria cafe taller casa gran fondo visitar cafe moniquira' },
+    { t: 'Rugantino di Roma', s: 'Restaurante italiano', h: '#aliados', k: 'comer comida restaurante restaurantes italiano pizza pasta almorzar almuerzo cenar cena' },
+    { t: 'Fusionario Casa', s: 'Cocina de fusión', h: '#aliados', k: 'comer comida restaurante restaurantes fusion almorzar almuerzo cenar cena' },
+    { t: 'Hotel Nivari Duitama', s: 'Hotel aliado', h: '#dormir', k: 'dormir hotel hoteles hospedaje alojamiento habitacion' },
+    { t: 'Teléfonos', s: 'Asistencia médica, mecánica y 123', h: '#telefonos', k: 'telefono telefonos emergencia emergencias medica mecanica ayuda 123 llamar' },
+    { t: 'Resultados', s: 'Finalap, el cronometrador', h: '#llegada', k: 'resultados finalap tiempos chip clasificacion' },
+    { t: 'Tienda oficial de La 10', s: 'En el sitio del Gran Fondo', h: '#gran-fondo', k: 'tienda jersey buzo comprar recuerdos camiseta' }
+  ];
+  function normal(s) { return String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+  function buscar(q) {
+    var palabras = normal(q).split(/\s+/).filter(function (w) { return w.length > 1; });
+    if (!palabras.length) return [];
+    return INDICE.map(function (e) {
+      var texto = normal(e.t + ' ' + e.k);
+      var puntos = palabras.reduce(function (n, w) { return n + (texto.indexOf(w) !== -1 ? 1 : 0); }, 0);
+      return { e: e, p: puntos };
+    }).filter(function (x) { return x.p > 0; }).sort(function (a, b) { return b.p - a.p; }).slice(0, 5).map(function (x) { return x.e; });
+  }
+  function enlazarBuscador() {
+    var form = document.getElementById('buscar');
+    var campo = document.getElementById('buscar-texto');
+    var lista = document.getElementById('resultados');
+    if (!form || !campo || !lista) return;
+    function pintar() {
+      var q = campo.value.trim();
+      if (!q) { lista.hidden = true; lista.innerHTML = ''; return; }
+      var r = buscar(q);
+      lista.innerHTML = r.length
+        ? r.map(function (e) { return '<li><a href="' + e.h + '">' + e.t + ' <small>' + e.s + '</small></a></li>'; }).join('')
+        : '<li><a href="#divino-nino">No encontramos eso. Prueba con comer, dormir, hora o curva <small>→</small></a></li>';
+      lista.hidden = false;
+    }
+    campo.addEventListener('input', pintar);
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var r = buscar(campo.value);
+      if (r.length) { lista.hidden = true; location.hash = r[0].h; campo.blur(); } else { pintar(); }
+    });
+    lista.addEventListener('click', function (ev) { if (ev.target.closest('a')) { lista.hidden = true; } });
+  }
+
+  // ---------- Botón fijo ----------
+  // Aparece cuando ya pasaste la portada y se esconde mientras la calculadora está a la vista.
+  function enlazarFijo() {
+    var fijo = document.getElementById('fijo');
+    var portada = document.querySelector('.portada');
+    var calc = document.getElementById('llegada');
+    if (!fijo || !portada || !calc || !('IntersectionObserver' in window)) return;
+    var verPortada = true, verCalc = false;
+    function pinta() { if (!verPortada && !verCalc) fijo.removeAttribute('data-oculto'); else fijo.setAttribute('data-oculto', ''); }
+    new IntersectionObserver(function (e) { verPortada = e[0].isIntersecting; pinta(); }).observe(portada);
+    new IntersectionObserver(function (e) { verCalc = e[0].isIntersecting; pinta(); }, { threshold: 0.15 }).observe(calc);
+  }
+
   restaurar();
+  enlazarBuscador();
+  enlazarFijo();
   document.getElementById('calculadora').addEventListener('input', calcular);
   document.getElementById('calculadora').addEventListener('change', calcular);
   $('#btn-cal').addEventListener('click', calendario);
