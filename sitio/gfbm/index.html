@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Duitama para quien acompaña · La 10 del Gran Fondo Boyacá Mundial · Visit Duitama</title>
+<meta name="description" content="A qué hora llega tu ciclista, qué calles se cierran el domingo y qué hacer en Duitama mientras corre La 10 del Gran Fondo Boyacá Mundial, del 9 al 11 de octubre de 2026.">
+<link rel="canonical" href="https://visitduitama.com/gfbm/">
+<meta name="theme-color" content="#031847">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tu ciclista corre La 10. Tú tienes Duitama">
+<meta property="og:description" content="A qué hora llega, qué calles se cierran y qué hacer mientras pedalea. Guía para acompañantes del Gran Fondo Boyacá Mundial, 9–11 oct 2026.">
+<meta property="og:url" content="https://visitduitama.com/gfbm/">
+<meta property="og:image" content="https://visitduitama.com/gfbm/compartir.png">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/gfbm/manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Visit Duitama × GFBM — piloto del fin de semana de La 10.
+   Paleta y tipografía del GFBM (src/styles/global.css del repo gfbm) para que
+   el acompañante reconozca el evento; el isotipo y el punto de dato son de
+   Visit Duitama (BRIEF.md §3.3–3.4). Ver docs/PILOTO-GFBM-2026.md. */
+:root{
+  --noche:#031847; --azul-profundo:#05256d; --azul-medio:#1e5da0; --azul-claro:#0894cc;
+  --amarillo:#ffc812; --amarillo-acento:#f7e700; --rojo:#f20c0c;
+  --gf:#4481c2; --mf:#3ba935;
+  --texto:#1a2230; --texto-suave:#4a5b6d; --texto-inv:#fff; --texto-inv-suave:#b9c2d6;
+  --fondo:#fff; --fondo-alt:#f4f7fa; --borde:#dfe6ee;
+  --teja:#A8461F; --teja-profunda:#7E3416; --ruana:#BB8B2E; --ruana-texto:#8A6415;
+  --radio:14px;
+  --sombra:0 1px 2px rgba(3,24,71,.06),0 6px 24px rgba(3,24,71,.08);
+  --ancho:1080px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--fondo);color:var(--texto);font:400 17px/1.55 Archivo,system-ui,-apple-system,"Segoe UI",sans-serif}
+img,svg{max-width:100%}
+a{color:var(--azul-medio)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--azul-claro);outline-offset:2px}
+.envoltura{max-width:var(--ancho);margin:0 auto;padding:0 16px}
+h1,h2,h3{font-weight:900;line-height:1.08;letter-spacing:-.01em;margin:0}
+h2{font-size:clamp(28px,6vw,40px);text-transform:uppercase}
+h3{font-size:20px;font-weight:800}
+p{margin:0 0 12px}
+.ceja{font:500 12px/1.4 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.12em;text-transform:uppercase}
+
+/* Dato verificable: la firma de Visit Duitama */
+.dato{font:500 14px/1.4 "IBM Plex Mono",ui-monospace,monospace;color:var(--teja-profunda);display:inline-flex;align-items:baseline;gap:8px}
+.dato::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teja);flex-shrink:0;transform:translateY(-2px)}
+.oscuro .dato{color:var(--amarillo)}
+.oscuro .dato::before{background:var(--ruana)}
+/* Dato por confirmar: subrayado punteado Ruana (docs/PENDING-FACTS.md) */
+.pendiente{text-decoration:underline dotted var(--ruana) 2px;text-underline-offset:3px}
+.pendiente::after{content:" · por confirmar";font:500 11px "IBM Plex Mono",monospace;color:var(--ruana-texto);text-decoration:none;display:inline-block}
+.oscuro .pendiente::after{color:var(--ruana)}
+
+/* Cabecera */
+.cabecera{position:sticky;top:0;z-index:50;background:var(--noche);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.cabecera .envoltura{display:flex;align-items:center;gap:12px;height:56px}
+.marca{display:flex;align-items:center;gap:9px;color:#fff;text-decoration:none;flex-shrink:0}
+.marca svg{width:22px;height:24px}
+.marca b{font-weight:800;font-size:15px;letter-spacing:.01em}
+.marca small{display:block;font:500 10px "IBM Plex Mono",monospace;letter-spacing:.14em;color:var(--texto-inv-suave);text-transform:uppercase}
+.atajos{display:flex;gap:6px;overflow-x:auto;min-width:0;scrollbar-width:none;margin-left:auto;padding:4px 0}
+.atajos::-webkit-scrollbar{display:none}
+.atajos a{flex-shrink:0;color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.08)}
+.atajos a:hover{background:rgba(255,255,255,.16)}
+
+/* Héroe */
+.heroe{background:radial-gradient(120% 90% at 85% 0%,#0b3a8f 0%,var(--noche) 55%);color:#fff;padding:36px 0 40px;position:relative;overflow:hidden}
+.heroe::after{content:"";position:absolute;right:-60px;bottom:-30px;width:280px;height:8px;background:linear-gradient(90deg,var(--mf) 0 25%,var(--gf) 25% 50%,var(--amarillo) 50% 75%,var(--rojo) 75%);transform:skewX(-30deg);opacity:.9}
+.heroe .ceja{color:var(--amarillo)}
+.heroe h1{font-size:clamp(38px,10vw,72px);text-transform:uppercase;margin:12px 0 14px;max-width:14ch}
+.heroe h1 em{font-style:normal;color:var(--amarillo)}
+.heroe .entrada{font-size:19px;color:#e6ecf7;max-width:36ch}
+.botones{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 18px;border-radius:999px;font:800 16px Archivo,sans-serif;text-decoration:none;border:0;cursor:pointer}
+.btn--amarillo{background:var(--amarillo);color:var(--noche)}
+.btn--amarillo:hover{background:var(--amarillo-acento)}
+.btn--borde{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}
+.btn--borde:hover{box-shadow:inset 0 0 0 2px #fff}
+.datos-heroe{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+@media (min-width:720px){.datos-heroe{grid-template-columns:repeat(3,auto);justify-content:start;column-gap:28px}}
+
+/* Secciones */
+.seccion{padding:48px 0}
+.seccion--alt{background:var(--fondo-alt)}
+.seccion__cabeza{margin-bottom:24px;max-width:60ch}
+.seccion__cabeza .ceja{color:var(--azul-medio);display:block;margin-bottom:8px}
+.seccion__cabeza p{color:var(--texto-suave);margin-top:10px}
+.tarjeta{background:#fff;border:1px solid var(--borde);border-radius:var(--radio);padding:18px;box-shadow:var(--sombra)}
+
+/* Agenda */
+.dias{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+@media (min-width:860px){.dias{grid-template-columns:repeat(3,1fr)}}
+.dia h3{display:flex;align-items:baseline;gap:10px;text-transform:uppercase;margin-bottom:12px}
+.dia h3 span{font-size:44px;line-height:1;color:var(--azul-medio)}
+.dia--carrera{background:var(--noche);color:#fff;border-color:var(--noche)}
+.dia--carrera h3 span{color:var(--amarillo)}
+.hito{display:grid;grid-template-columns:62px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--borde)}
+.dia--carrera .hito{border-color:rgba(255,255,255,.14)}
+.hito time{font:500 14px "IBM Plex Mono",monospace;color:var(--teja-profunda);padding-top:1px}
+.dia--carrera .hito time{color:var(--amarillo)}
+.hito b{display:block;font-weight:800}
+.hito small{display:block;color:var(--texto-suave);font-size:14px;line-height:1.45}
+.dia--carrera .hito small{color:var(--texto-inv-suave)}
+.chip{display:inline-block;font:700 11px Archivo,sans-serif;letter-spacing:.04em;padding:2px 7px;border-radius:999px;color:#fff;vertical-align:1px}
+.chip--gf{background:var(--gf)} .chip--mf{background:var(--mf)}
+
+/* Calculadora */
+.calc{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+@media (min-width:860px){.calc{grid-template-columns:minmax(300px,420px) 1fr;align-items:start}}
+fieldset{border:0;margin:0 0 16px;padding:0}
+legend{font-weight:800;margin-bottom:8px}
+.segmento{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.segmento--3{grid-template-columns:repeat(3,1fr)}
+.segmento input{position:absolute;opacity:0;pointer-events:none}
+.segmento label{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:56px;padding:8px 6px;border-radius:12px;border:2px solid var(--borde);background:#fff;cursor:pointer;font-weight:800;line-height:1.15}
+.segmento label small{font:500 12px "IBM Plex Mono",monospace;color:var(--texto-suave);margin-top:3px}
+.segmento input:checked+label{border-color:var(--noche);background:var(--noche);color:#fff}
+.segmento input:checked+label small{color:var(--amarillo)}
+.segmento input:focus-visible+label{outline:3px solid var(--azul-claro);outline-offset:2px}
+#d-gf:checked+label{border-color:var(--gf);background:var(--gf)}
+#d-mf:checked+label{border-color:var(--mf);background:var(--mf)}
+#d-gf:checked+label small,#d-mf:checked+label small{color:#fff}
+.horas{display:none;gap:8px;align-items:center;margin-top:10px}
+.horas.visible{display:flex}
+.horas input{width:72px;min-height:48px;font:600 18px "IBM Plex Mono",monospace;padding:8px;border:2px solid var(--borde);border-radius:10px;text-align:center}
+.resultado{background:var(--noche);color:#fff;border-radius:var(--radio);padding:22px}
+.resultado .ceja{color:var(--texto-inv-suave)}
+.resultado__hora{font:900 clamp(48px,14vw,76px)/1 Archivo,sans-serif;color:var(--amarillo);margin:6px 0 4px;letter-spacing:-.02em}
+.resultado__rango{font:500 15px "IBM Plex Mono",monospace;color:#e6ecf7}
+.resultado__estar{margin:16px 0 0;padding:12px 14px;border-radius:10px;background:rgba(255,200,18,.12);border-left:4px solid var(--amarillo);font-weight:700}
+.alerta{margin-top:12px;padding:12px 14px;border-radius:10px;background:#fdf1f0;color:#7a1712;font-weight:700;border-left:4px solid var(--rojo)}
+.paso-lista{list-style:none;margin:18px 0 0;padding:0}
+.paso-lista li{display:grid;grid-template-columns:64px 1fr;gap:10px;padding:9px 0;border-top:1px solid rgba(255,255,255,.12);font-size:15px}
+.paso-lista time{font:500 14px "IBM Plex Mono",monospace;color:var(--amarillo)}
+.paso-lista small{display:block;color:var(--texto-inv-suave);font-size:13px}
+.paso-lista .corte-mal time{color:#ff8a80}
+.nota{font-size:14px;color:var(--texto-suave);margin-top:12px}
+.resultado .nota{color:var(--texto-inv-suave)}
+.btn--cal{margin-top:16px;background:#fff;color:var(--noche);min-height:44px;font-size:15px}
+
+/* Domingo */
+.reglas{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-bottom:20px}
+@media (min-width:860px){.reglas{grid-template-columns:repeat(2,1fr)}}
+.regla{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start}
+.regla svg{width:40px;height:40px;padding:8px;border-radius:10px;background:var(--noche);color:#fff}
+.regla b{display:block;font-weight:800;margin-bottom:2px}
+.regla p{margin:0;color:var(--texto-suave);font-size:15.5px}
+.mapa-caja{border-radius:var(--radio);overflow:hidden;border:1px solid var(--borde);background:#e9eef3;position:relative}
+#mapa{height:min(70vh,520px);min-height:340px}
+.mapa-sin{display:flex;align-items:center;justify-content:center;height:100%;color:var(--texto-suave);font-size:15px;padding:20px;text-align:center}
+.mapa-barra{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.mapa-barra button{min-height:40px;padding:8px 14px;border-radius:999px;border:2px solid var(--borde);background:#fff;font:700 14px Archivo,sans-serif;cursor:pointer;color:var(--noche)}
+.leyenda{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:var(--texto-suave);width:100%}
+@media (min-width:720px){.leyenda{width:auto;margin-left:auto}}
+.leyenda i{display:inline-block;width:18px;height:4px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.leaflet-popup-content{font:15px/1.4 Archivo,sans-serif}
+.leaflet-popup-content b{font-weight:800}
+
+/* Planes */
+.planes{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+@media (min-width:860px){.planes{grid-template-columns:repeat(3,1fr)}}
+.plan h3{margin-bottom:6px}
+.plan .para{font:500 12px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--azul-medio)}
+.plan ol{margin:12px 0 0;padding:0;list-style:none;counter-reset:p}
+.plan li{position:relative;padding:8px 0 8px 34px;border-top:1px solid var(--borde);font-size:15.5px}
+.plan li::before{counter-increment:p;content:counter(p);position:absolute;left:0;top:9px;width:24px;height:24px;border-radius:50%;background:var(--noche);color:#fff;font:800 13px/24px Archivo,sans-serif;text-align:center}
+.plan li b{display:block}
+.vispera{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:28px}
+@media (min-width:720px){.vispera{grid-template-columns:repeat(2,1fr)}}
+.lugar h3{font-size:18px;margin-bottom:6px}
+.lugar p{font-size:15.5px;color:var(--texto-suave)}
+.lugar .ir{font-weight:700;font-size:15px}
+
+/* Lista de chequeo y teléfonos */
+.dos{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+@media (min-width:860px){.dos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.chequeo{list-style:none;margin:0;padding:0}
+.chequeo li{display:grid;grid-template-columns:28px 1fr;gap:8px;padding:10px 0;border-top:1px solid var(--borde)}
+.chequeo li::before{content:"";width:20px;height:20px;border:2px solid var(--noche);border-radius:6px;margin-top:2px}
+.tel{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-top:1px solid var(--borde);text-decoration:none;color:var(--texto)}
+.tel b{display:block;font-weight:800}
+.tel small{color:var(--texto-suave);font-size:14px}
+.tel>span:last-child{font:500 16px "IBM Plex Mono",monospace;color:var(--azul-medio);white-space:nowrap}
+
+/* GFBM y pie */
+.gfbm{background:var(--noche);color:#fff}
+.enlaces{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin-top:8px}
+@media (min-width:720px){.enlaces{grid-template-columns:repeat(2,1fr)}}
+.enlace{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 18px;border-radius:12px;background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-weight:800}
+.enlace:hover{background:rgba(255,255,255,.13)}
+.enlace small{display:block;font-weight:400;color:var(--texto-inv-suave);font-size:14px}
+.enlace::after{content:"→";color:var(--amarillo);font-size:22px}
+.pie{background:#020f2e;color:var(--texto-inv-suave);padding:32px 0 calc(32px + env(safe-area-inset-bottom));font-size:14px}
+.pie p{max-width:70ch}
+.pie a{color:#fff}
+.pie .marca{margin-bottom:14px}
+.sin-red{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;background:var(--amarillo);color:var(--noche);padding:12px 16px;border-radius:12px;font-weight:700;box-shadow:var(--sombra);display:none}
+.sin-red.visible{display:block}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="cabecera">
+  <div class="envoltura">
+    <a class="marca" href="#inicio" aria-label="Visit Duitama, inicio">
+      <svg viewBox="0 0 100 110" aria-hidden="true"><path d="M24 30 L44 66 L80 12" fill="none" stroke="#ECEEE6" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M37 80 L37 102 A11 11 0 0 0 37 80 Z" fill="#BB8B2E"/></svg>
+      <span><small>Visit</small><b>Duitama</b></span>
+    </a>
+    <nav class="atajos" aria-label="Secciones">
+      <a href="#llegada">¿A qué hora llega?</a>
+      <a href="#domingo">Domingo</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#planes">Planes</a>
+      <a href="#telefonos">Teléfonos</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="heroe oscuro">
+    <div class="envoltura">
+      <span class="ceja">La 10 · Gran Fondo Boyacá Mundial · 9–11 oct 2026</span>
+      <h1>Tu ciclista corre. <em>Tú tienes Duitama</em></h1>
+      <p class="entrada">Para quien acompaña: a qué hora llega, qué calles se cierran el domingo y qué hacer mientras pedalea. Todo en una página, pensada para el celular.</p>
+      <div class="botones">
+        <a class="btn btn--amarillo" href="#llegada" data-evento="heroe-llegada">¿A qué hora llega?</a>
+        <a class="btn btn--borde" href="#domingo" data-evento="heroe-domingo">Domingo: calles cerradas</a>
+      </div>
+      <ul class="datos-heroe">
+        <li class="dato">Dom 11 · salida 6:00 a.m.</li>
+        <li class="dato">Cierre de vías desde las 5:30 a.m.</li>
+        <li class="dato">Salida y meta: Cámara de Comercio</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ¿A qué hora llega? -->
+  <section class="seccion" id="llegada">
+    <div class="envoltura">
+      <div class="seccion__cabeza">
+        <span class="ceja">Domingo 11 de octubre</span>
+        <h2>¿A qué hora llega?</h2>
+        <p>Escoge la distancia y el ritmo de tu ciclista. Te decimos cuándo pasa por cada punto, a qué hora cruza la meta y a qué hora tienes que estar ahí para no perdértelo.</p>
+      </div>
+      <div class="calc">
+        <form class="tarjeta" id="calculadora" onsubmit="return false">
+          <fieldset>
+            <legend>¿Qué distancia corre?</legend>
+            <div class="segmento">
+              <input type="radio" name="distancia" id="d-gf" value="gf" checked>
+              <label for="d-gf">Gran Fondo<small>143,5 km · 6:00</small></label>
+              <input type="radio" name="distancia" id="d-mf" value="mf">
+              <label for="d-mf">Medio Fondo<small>100 km · 6:15</small></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>¿A qué ritmo va?</legend>
+            <div class="segmento segmento--3">
+              <input type="radio" name="ritmo" id="r-28" value="28">
+              <label for="r-28">Rápido<small>28 km/h</small></label>
+              <input type="radio" name="ritmo" id="r-22" value="22" checked>
+              <label for="r-22">Medio<small>22 km/h</small></label>
+              <input type="radio" name="ritmo" id="r-18" value="18">
+              <label for="r-18">Tranquilo<small>18 km/h</small></label>
+            </div>
+            <div class="segmento" style="margin-top:8px">
+              <input type="radio" name="ritmo" id="r-horas" value="horas">
+              <label for="r-horas">Sé cuánto tarda<small>horas y minutos</small></label>
+              <input type="radio" name="ritmo" id="r-kmh" value="kmh">
+              <label for="r-kmh">Sé su promedio<small>km/h</small></label>
+            </div>
+            <div class="horas" id="campo-horas">
+              <input type="number" id="h" min="2" max="10" value="6" inputmode="numeric" aria-label="Horas"> h
+              <input type="number" id="m" min="0" max="59" step="5" value="30" inputmode="numeric" aria-label="Minutos"> min
+            </div>
+            <div class="horas" id="campo-kmh">
+              <input type="number" id="kmh" min="10" max="40" step="0.5" value="24" inputmode="decimal" aria-label="Velocidad promedio en km/h"> km/h de promedio
+            </div>
+          </fieldset>
+          <p class="nota">El promedio incluye subidas, paradas en los avituallamientos y bajadas. Si tu ciclista usa Strava o Garmin, su promedio en salidas largas de montaña es la mejor pista.</p>
+        </form>
+
+        <div class="resultado oscuro" aria-live="polite">
+          <span class="ceja" id="res-titulo">Gran Fondo · cruza la meta hacia las</span>
+          <div class="resultado__hora" id="res-hora">12:31</div>
+          <div class="resultado__rango" id="res-rango">entre 12:00 y 13:02</div>
+          <div class="resultado__estar" id="res-estar">Estate en la meta desde las 11:45</div>
+          <div id="res-alerta"></div>
+          <ol class="paso-lista" id="res-pasos"></ol>
+          <p class="nota" style="margin-top:14px">¿Seguimiento en vivo por chip? <span class="pendiente">Si la organización lo habilita, lo enlazamos aquí</span></p>
+          <button class="btn btn--cal" id="btn-cal" type="button" data-evento="calendario">Ponerme una alarma en el calendario</button>
+          <p class="nota">Es un cálculo con velocidad pareja: la montaña, los pinchazos y el cansancio lo mueven. Úsalo para organizar tu mañana, no para cronometrar. Los kilómetros son los de la guía del participante.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Domingo -->
+  <section class="seccion seccion--alt" id="domingo">
+    <div class="envoltura">
+      <div class="seccion__cabeza">
+        <span class="ceja">Domingo 11 · la ciudad cambia</span>
+        <h2>Domingo sin carro</h2>
+        <p>La carrera sale de Duitama hacia Paipa y vuelve por Santa Rosa y el Cogollo. En el medio pasa por Nobsa, Gámeza, Mongua, Tópaga, Monguí, Corrales, Busbanzá y Floresta. Esas carreteras están en carrera toda la mañana.</p>
+      </div>
+      <div class="reglas">
+        <div class="regla">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <div><b>Salida y meta en el mismo punto</b><p>Frente a la Cámara de Comercio de Duitama, Transversal 19 # 23-141. Ahí mismo se entregan los kits y está la Expo Bici el viernes y el sábado.</p></div>
+        </div>
+        <div class="regla">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Las vías cierran a las 5:30 a.m.</b><p>Si vas en carro a despedirlo, llega antes. Los corrales abren a las 4:50 y cierran a las 5:50.</p></div>
+        </div>
+        <div class="regla">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 16V8h3a2.5 2.5 0 0 1 0 5h-3"/></svg>
+          <div><b>Parqueaderos que indica la organización</b><p>Colegio Rafael Reyes, frente a la Cámara de Comercio, y el parqueadero de la UPTC, con entrada por la Carrera 18.</p></div>
+        </div>
+        <div class="regla">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14M7 17l1.5-5h7L17 17"/><circle cx="8" cy="19" r="1.5"/><circle cx="16" cy="19" r="1.5"/><path d="M4 4l16 16"/></svg>
+          <div><b>Nada de seguirlo en carro</b><p>Los carros y motos acompañantes están prohibidos en la ruta. Si los encuentran en la vía, quedan a disposición de la autoridad y el ciclista queda descalificado.</p></div>
+        </div>
+        <div class="regla">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20l6-10 4 6 3-4 5 8z"/></svg>
+          <div><b>Paseos largos, el lunes festivo</b><p>Tota, Monguí o el Cocuy quedan lejos y las salidas de la ciudad están en la ruta: no alcanzarías a volver para la llegada. El domingo por la mañana, quédate en Duitama.</p></div>
+        </div>
+        <div class="regla">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l7-14 3 6 2-3 4 11z"/><path d="M9 20l2-4"/></svg>
+          <div><b>Los últimos kilómetros bajan del Cogollo</b><p>El final es un descenso controlado desde el mirador hasta la meta. El mejor sitio para verlo llegar es la meta, no la subida.</p></div>
+        </div>
+      </div>
+
+      <div class="mapa-caja"><div id="mapa"><div class="mapa-sin">Cargando el mapa de la ruta…</div></div></div>
+      <div class="mapa-barra">
+        <button type="button" id="btn-ciudad">Duitama</button>
+        <button type="button" id="btn-ruta">Toda la ruta</button>
+        <button type="button" id="btn-yo" data-evento="ubicacion">¿Dónde estoy?</button>
+        <span class="leyenda"><span><i style="background:var(--gf)"></i>Gran Fondo</span><span><i style="background:var(--mf)"></i>Medio Fondo</span></span>
+      </div>
+      <p class="nota">Ruta: track oficial del GFBM 2026. Las horas de reapertura de cada vía las define Tránsito: <span class="pendiente">las publicamos aquí apenas las tengamos</span></p>
+    </div>
+  </section>
+
+  <!-- Agenda -->
+  <section class="seccion" id="agenda">
+    <div class="envoltura">
+      <div class="seccion__cabeza">
+        <span class="ceja">Viernes 9 · sábado 10 · domingo 11</span>
+        <h2>El fin de semana, día por día</h2>
+      </div>
+      <div class="dias">
+        <article class="tarjeta dia">
+          <h3><span>9</span> Viernes</h3>
+          <div class="hito"><time>10:00</time><div><b>Entrega de kits y Expo Bici</b><small>Hasta las 7:00 p.m. en la Cámara de Comercio de Duitama, Transversal 19 # 23-141. El kit se reclama con el número de participante que llega al correo.</small></div></div>
+          <div class="hito"><time>Tarde</time><div><b>Tiempo para conocer la ciudad</b><small>Es el mejor día para pasear sin cierres de vías. Mira las ideas de abajo.</small></div></div>
+        </article>
+        <article class="tarjeta dia">
+          <h3><span>10</span> Sábado</h3>
+          <div class="hito"><time>6:45</time><div><b>Encuentro de la rodada de bienvenida</b><small>Sale a las 7:00 a.m. desde la Cámara de Comercio. Son 38 km, unas 3 horas: Duitama, Paipa, vuelta al Lago Sochagota, Hotel Sochagota, Alto de la Cascajera, Pantano de Vargas y de regreso.</small></div></div>
+          <div class="hito"><time>9:00</time><div><b>Entrega de kits y Expo Bici</b><small>Hasta las 7:00 p.m., mismo lugar.</small></div></div>
+          <div class="hito"><time>Noche</time><div><b>A dormir temprano</b><small>El domingo los corrales abren a las 4:50 a.m.</small></div></div>
+        </article>
+        <article class="tarjeta dia dia--carrera oscuro">
+          <h3><span>11</span> Domingo</h3>
+          <div class="hito"><time>4:50</time><div><b>Abren los corrales</b><small>Un corral grande para el Gran Fondo y uno para el Medio Fondo.</small></div></div>
+          <div class="hito"><time>5:30</time><div><b>Empiezan los cierres de vías</b></div></div>
+          <div class="hito"><time>5:50</time><div><b>Cierran los corrales</b></div></div>
+          <div class="hito"><time>6:00</time><div><b>Sale el Gran Fondo <span class="chip chip--gf">GF</span></b><small>143,5 km</small></div></div>
+          <div class="hito"><time>6:15</time><div><b>Sale el Medio Fondo <span class="chip chip--mf">MF</span></b><small>100 km</small></div></div>
+          <div class="hito"><time>10:30</time><div><b>Corte en Monguí <span class="chip chip--gf">GF</span></b><small>Quien no pase a tiempo sube al bus escoba.</small></div></div>
+          <div class="hito"><time>12:00</time><div><b>Corte en Tobasía <span class="chip chip--gf">GF</span> <span class="chip chip--mf">MF</span></b><small>Igual: bus escoba o sigue bajo su propia responsabilidad.</small></div></div>
+          <div class="hito"><time>9:30</time><div><b>Primeras llegadas, aproximadamente</b><small>Calcula la de tu ciclista <a href="#llegada" style="color:var(--amarillo)">arriba</a>. Hora de la premiación: <span class="pendiente">la anuncia la organización</span></small></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planes -->
+  <section class="seccion seccion--alt" id="planes">
+    <div class="envoltura">
+      <div class="seccion__cabeza">
+        <span class="ceja">Mientras pedalea · domingo por la mañana</span>
+        <h2>Tres planes a pie</h2>
+        <p>Todos arrancan en la salida, se quedan dentro de Duitama y te devuelven a la meta antes de que llegue. Calcula primero <a href="#llegada">a qué hora llega</a>.</p>
+      </div>
+      <div class="planes" id="lista-planes">
+        <article class="tarjeta plan">
+          <span class="para">Para quien quiere café y calma</span>
+          <h3>Despídelo y desayuna</h3>
+          <ol>
+            <li><b>6:00 · la salida</b>Despídelo en los corrales y míralo arrancar.</li>
+            <li><b>Camina al centro</b>La Plaza de los Libertadores y la Catedral de San Lorenzo Mártir quedan a poco más de un kilómetro de la salida, unos 15 minutos a pie.</li>
+            <li><b>Desayuno sin afán</b>Hay panaderías y cafés alrededor de la plaza. <span class="pendiente">Cuáles abren temprano el domingo</span></li>
+            <li><b>A la meta</b>A la hora que te dio la calculadora.</li>
+          </ol>
+        </article>
+        <article class="tarjeta plan">
+          <span class="para">Para familias con niños</span>
+          <h3>Una mañana sin carro</h3>
+          <ol>
+            <li><b>6:00 · la salida</b>Los niños ven arrancar a más de mil ciclistas: es un espectáculo.</li>
+            <li><b>Desayuno y descanso</b>Vuelvan al hotel o desayunen cerca de la salida.</li>
+            <li><b>Pueblito Boyacense</b>Queda a unos 800 metros de la salida, en la vereda Tocogua. <span class="pendiente">Horario del domingo y valor de la entrada en 2026</span></li>
+            <li><b>Carteles para la llegada</b>Háganlos con su nombre y su número: en la meta todos los cascos se parecen.</li>
+          </ol>
+        </article>
+        <article class="tarjeta plan">
+          <span class="para">Para quien quiere vivir la carrera</span>
+          <h3>Verlo salir y verlo llegar</h3>
+          <ol>
+            <li><b>5:30 · a la salida</b>Antes de que cierren las vías. Abrígate: la salida está a 2.531 m.</li>
+            <li><b>6:00 y 6:15</b>Sale el Gran Fondo y, un cuarto de hora después, el Medio Fondo.</li>
+            <li><b>Desayuno y siesta</b>Tienes entre tres y siete horas. No intentes alcanzarlo en la ruta.</li>
+            <li><b>Primeros a la meta</b>A 32 km/h de promedio, los más rápidos del Medio Fondo llegarían hacia las 9:30. Busca tu sitio temprano.</li>
+          </ol>
+        </article>
+      </div>
+
+      <div class="seccion__cabeza" style="margin-top:40px">
+        <span class="ceja">Viernes, sábado y el lunes festivo</span>
+        <h2>Para la víspera</h2>
+        <p>Sin cierres de vías, Duitama y sus vecinos quedan a mano.</p>
+      </div>
+      <div class="vispera" id="lista-vispera">
+        <article class="tarjeta lugar"><h3>El centro de Duitama</h3><p>La Plaza de los Libertadores y la Catedral de San Lorenzo Mártir, a poco más de un kilómetro de la Cámara de Comercio. Se recorre a pie y sin carro.</p></article>
+        <article class="tarjeta lugar"><h3>Pueblito Boyacense</h3><p>Réplica de plazas y calles de pueblos de Boyacá, a unos 800 metros de la Cámara de Comercio. Se cobra entrada. <span class="pendiente">Horario y precio de 2026</span></p></article>
+        <article class="tarjeta lugar"><h3>Termales de Paipa</h3><p>El Instituto Termal de Paipa abre todos los días de 7:00 a.m. a 9:00 p.m., según su sitio oficial. Queda a 4 km del centro de Paipa, y la rodada del sábado pasa por el Lago Sochagota, al lado. <a class="ir" href="https://termalesdepaipa.com/" rel="noopener">termalesdepaipa.com</a></p></article>
+        <article class="tarjeta lugar"><h3>Pantano de Vargas</h3><p>Escenario de la batalla de 1819 y última parada de la rodada del sábado antes de volver a Duitama.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chequeo y teléfonos -->
+  <section class="seccion" id="telefonos">
+    <div class="envoltura">
+      <div class="dos">
+        <div class="tarjeta">
+          <span class="ceja" style="color:var(--azul-medio)">Antes del domingo</span>
+          <h2 style="font-size:28px;margin:8px 0 14px">Acuerden esto</h2>
+          <ul class="chequeo">
+            <li><span><b>Un punto y una hora de encuentro después de la meta.</b> Con miles de personas en el mismo lugar, la señal se satura: no cuenten con llamarse.</span></li>
+            <li><span><b>Su número de participante.</b> Lo vas a necesitar para buscarlo en los resultados y en las fotos.</span></li>
+            <li><span><b>Celular cargado y batería externa.</b> Son muchas horas.</span></li>
+            <li><span><b>Abrigo para la madrugada.</b> La salida está a 2.531 m sobre el nivel del mar.</span></li>
+            <li><span><b>Esta página en el celular.</b> Ábrela una vez con señal y después funciona sin conexión.</span></li>
+          </ul>
+        </div>
+        <div class="tarjeta">
+          <span class="ceja" style="color:var(--azul-medio)">Teléfonos</span>
+          <h2 style="font-size:28px;margin:8px 0 6px">Si algo pasa</h2>
+          <a class="tel" href="tel:+573204264995" data-evento="tel-medica"><span><b>Asistencia médica del evento</b><small>Call center de la guía del participante</small></span><span>320 426 4995</span></a>
+          <a class="tel" href="tel:+573204266001" data-evento="tel-mecanica"><span><b>Asistencia mecánica del evento</b><small>Call center de la guía del participante</small></span><span>320 426 6001</span></a>
+          <a class="tel" href="tel:123" data-evento="tel-123"><span><b>Emergencias</b><small>Línea nacional</small></span><span>123</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GFBM -->
+  <section class="seccion gfbm oscuro">
+    <div class="envoltura">
+      <div class="seccion__cabeza">
+        <span class="ceja" style="color:var(--amarillo)">Del Gran Fondo Boyacá Mundial</span>
+        <h2>La carrera, en su sitio oficial</h2>
+      </div>
+      <div class="enlaces">
+        <a class="enlace" href="https://www.gfboyacamundial.com/es/que-sigue/?utm_source=visitduitama&amp;utm_medium=referral&amp;utm_campaign=acompanantes-2026" data-evento="gfbm-que-sigue"><span>Qué sigue antes de la carrera<small>Kit, horarios y avisos de la organización</small></span></a>
+        <a class="enlace" href="https://www.gfboyacamundial.com/es/?utm_source=visitduitama&amp;utm_medium=referral&amp;utm_campaign=acompanantes-2026#ruta" data-evento="gfbm-ruta"><span>La ruta y el GPX<small>Gran Fondo y Medio Fondo</small></span></a>
+        <a class="enlace" href="https://www.instagram.com/gfboyacamundial" data-evento="gfbm-instagram"><span>@gfboyacamundial<small>Avisos de última hora en Instagram</small></span></a>
+        <a class="enlace" href="https://www.gfboyacamundial.com/?utm_source=visitduitama&amp;utm_medium=referral&amp;utm_campaign=acompanantes-2026" data-evento="gfbm-sitio"><span>gfboyacamundial.com<small>Todo sobre La 10</small></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="envoltura">
+    <a class="marca" href="#inicio">
+      <svg viewBox="0 0 100 110" aria-hidden="true"><path d="M24 30 L44 66 L80 12" fill="none" stroke="#ECEEE6" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M37 80 L37 102 A11 11 0 0 0 37 80 Z" fill="#BB8B2E"/></svg>
+      <span><small>Visit</small><b>Duitama</b></span>
+    </a>
+    <p>Visit Duitama orienta: no vende, no reserva y no cobra. Los horarios del evento salen de la guía del participante del Gran Fondo Boyacá Mundial y la ruta, de su track oficial. Lo <span class="pendiente">subrayado con puntos</span> todavía lo estamos confirmando.</p>
+    <p>Piloto de octubre de 2026. La organización de la carrera es de la Corporación Gran Fondo Boyacá Mundial.</p>
+  </div>
+</footer>
+<div class="sin-red" id="sin-red" role="status">Sin conexión: estás viendo la copia guardada de esta página.</div>
+
+<script src="/gfbm/lugares.js" defer></script>
+<script src="/gfbm/app.js" defer></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"0d585693bddc4eda9fb27059e7dbb48c"}'></script>
+</body>
+</html>

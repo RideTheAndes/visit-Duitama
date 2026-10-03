@@ -1,0 +1,11 @@
+{
+  "name": "Duitama para quien acompaña · La 10",
+  "short_name": "La 10 · Duitama",
+  "start_url": "/gfbm/?origen=pantalla",
+  "scope": "/gfbm/",
+  "display": "standalone",
+  "background_color": "#031847",
+  "theme_color": "#031847",
+  "lang": "es-CO",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
