@@ -73,7 +73,11 @@ p{margin:0 0 12px}
 /* Héroe */
 .heroe{background:radial-gradient(120% 90% at 85% 0%,#0b3a8f 0%,var(--noche) 55%);color:#fff;padding:36px 0 40px;position:relative;overflow:hidden}
 .heroe::after{content:"";position:absolute;right:-60px;bottom:-30px;width:280px;height:8px;background:linear-gradient(90deg,var(--mf) 0 25%,var(--gf) 25% 50%,var(--amarillo) 50% 75%,var(--rojo) 75%);transform:skewX(-30deg);opacity:.9}
-.heroe .ceja{color:var(--amarillo)}
+.heroe .ceja{color:var(--amarillo);display:block}
+.heroe__la10{position:absolute;top:24px;right:16px;width:76px;height:auto}
+@media (min-width:720px){.heroe__la10{width:120px;right:max(16px,calc((100vw - var(--ancho))/2 + 16px))}}
+.heroe .ceja,.heroe h1{padding-right:84px}
+@media (min-width:720px){.heroe .ceja,.heroe h1{padding-right:0}}
 .heroe h1{font-size:clamp(38px,10vw,72px);text-transform:uppercase;margin:12px 0 14px;max-width:14ch}
 .heroe h1 em{font-style:normal;color:var(--amarillo)}
 .heroe .entrada{font-size:19px;color:#e6ecf7;max-width:36ch}
@@ -177,6 +181,11 @@ legend{font-weight:800;margin-bottom:8px}
 .lugar h3{font-size:18px;margin-bottom:6px}
 .lugar p{font-size:15.5px;color:var(--texto-suave)}
 .lugar .ir{font-weight:700;font-size:15px}
+.lugar--casa{background:var(--noche);color:#fff;border-color:var(--noche)}
+.lugar--casa p{color:#e6ecf7}
+.lugar--casa .ceja{color:var(--amarillo)}
+.lugar--casa a{color:var(--amarillo)}
+.etiqueta{display:inline-block;font:500 11px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--azul-medio);margin-bottom:6px}
 
 /* Lista de chequeo y teléfonos */
 .dos{display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
@@ -218,6 +227,7 @@ legend{font-weight:800;margin-bottom:8px}
       <a href="#domingo">Domingo</a>
       <a href="#agenda">Agenda</a>
       <a href="#planes">Planes</a>
+      <a href="#aliados">Aliados</a>
       <a href="#telefonos">Teléfonos</a>
     </nav>
   </div>
@@ -225,6 +235,7 @@ legend{font-weight:800;margin-bottom:8px}
 
 <main id="inicio">
   <section class="heroe oscuro">
+    <img class="heroe__la10" src="/gfbm/la10.webp" width="220" height="208" alt="La 10 · Gran Fondo Boyacá Mundial 2026">
     <div class="envoltura">
       <span class="ceja">La 10 · Gran Fondo Boyacá Mundial · 9–11 oct 2026</span>
       <h1>Tu ciclista corre. <em>Tú tienes Duitama</em></h1>
@@ -294,7 +305,7 @@ legend{font-weight:800;margin-bottom:8px}
           <div class="resultado__estar" id="res-estar">Estate en la meta desde las 11:45</div>
           <div id="res-alerta"></div>
           <ol class="paso-lista" id="res-pasos"></ol>
-          <p class="nota" style="margin-top:14px">¿Seguimiento en vivo por chip? <span class="pendiente">Si la organización lo habilita, lo enlazamos aquí</span></p>
+          <p class="nota" style="margin-top:14px">Los tiempos oficiales los toma por chip <a href="https://www.finalap.com/" rel="noopener" style="color:var(--amarillo)" data-evento="finalap">Finalap</a>, el cronometrador del Gran Fondo, y ahí se publican los resultados. ¿Seguimiento en vivo? <span class="pendiente">Si lo habilitan, lo enlazamos aquí</span></p>
           <button class="btn btn--cal" id="btn-cal" type="button" data-evento="calendario">Ponerme una alarma en el calendario</button>
           <p class="nota">Es un cálculo con velocidad pareja: la montaña, los pinchazos y el cansancio lo mueven. Úsalo para organizar tu mañana, no para cronometrar. Los kilómetros son los de la guía del participante.</p>
         </div>
@@ -359,12 +370,14 @@ legend{font-weight:800;margin-bottom:8px}
         <article class="tarjeta dia">
           <h3><span>9</span> Viernes</h3>
           <div class="hito"><time>10:00</time><div><b>Entrega de kits y Expo Bici</b><small>Hasta las 7:00 p.m. en la Cámara de Comercio de Duitama, Transversal 19 # 23-141. El kit se reclama con el número de participante que llega al correo.</small></div></div>
+          <div class="hito"><time>Todo el día</time><div><b>Visita La Ciclería Café Taller</b><small>La casa del Gran Fondo Boyacá Mundial, abierta para que conozcas por dentro dónde se organiza la carrera. Cra. 16 # 19-28. <a href="#aliados">Más abajo</a>.</small></div></div>
           <div class="hito"><time>Tarde</time><div><b>Tiempo para conocer la ciudad</b><small>Es el mejor día para pasear sin cierres de vías. Mira las ideas de abajo.</small></div></div>
         </article>
         <article class="tarjeta dia">
           <h3><span>10</span> Sábado</h3>
           <div class="hito"><time>6:45</time><div><b>Encuentro de la rodada de bienvenida</b><small>Sale a las 7:00 a.m. desde la Cámara de Comercio. Son 38 km, unas 3 horas: Duitama, Paipa, vuelta al Lago Sochagota, Hotel Sochagota, Alto de la Cascajera, Pantano de Vargas y de regreso.</small></div></div>
           <div class="hito"><time>9:00</time><div><b>Entrega de kits y Expo Bici</b><small>Hasta las 7:00 p.m., mismo lugar.</small></div></div>
+          <div class="hito"><time>Todo el día</time><div><b>La Ciclería Café Taller, abierta</b><small>Pasa por un Café Boyacense de Moniquirá a la casa del Gran Fondo. Cra. 16 # 19-28.</small></div></div>
           <div class="hito"><time>Noche</time><div><b>A dormir temprano</b><small>El domingo los corrales abren a las 4:50 a.m.</small></div></div>
         </article>
         <article class="tarjeta dia dia--carrera oscuro">
@@ -376,7 +389,8 @@ legend{font-weight:800;margin-bottom:8px}
           <div class="hito"><time>6:15</time><div><b>Sale el Medio Fondo <span class="chip chip--mf">MF</span></b><small>100 km</small></div></div>
           <div class="hito"><time>10:30</time><div><b>Corte en Monguí <span class="chip chip--gf">GF</span></b><small>Quien no pase a tiempo sube al bus escoba.</small></div></div>
           <div class="hito"><time>12:00</time><div><b>Corte en Tobasía <span class="chip chip--gf">GF</span> <span class="chip chip--mf">MF</span></b><small>Igual: bus escoba o sigue bajo su propia responsabilidad.</small></div></div>
-          <div class="hito"><time>9:30</time><div><b>Primeras llegadas, aproximadamente</b><small>Calcula la de tu ciclista <a href="#llegada" style="color:var(--amarillo)">arriba</a>. Hora de la premiación: <span class="pendiente">la anuncia la organización</span></small></div></div>
+          <div class="hito"><time>9:30</time><div><b>Primeras llegadas, aproximadamente</b><small>Calcula la de tu ciclista <a href="#llegada" style="color:var(--amarillo)">arriba</a>.</small></div></div>
+          <div class="hito"><time>2:30</time><div><b>Premiación</b><small>Hora tentativa: la organización la confirma en sus canales oficiales.</small></div></div>
         </article>
       </div>
     </div>
@@ -437,6 +451,32 @@ legend{font-weight:800;margin-bottom:8px}
     </div>
   </section>
 
+  <!-- Aliados -->
+  <section class="seccion" id="aliados">
+    <div class="envoltura">
+      <div class="seccion__cabeza">
+        <span class="ceja">Aliados del Gran Fondo</span>
+        <h2>Dónde parar en Duitama</h2>
+        <p>Los negocios que acompañan a La 10.</p>
+      </div>
+      <div class="vispera" id="lista-aliados">
+        <article class="tarjeta lugar lugar--casa oscuro">
+          <span class="ceja">La casa del Gran Fondo · viernes y sábado</span>
+          <h3 style="margin-top:6px">La Ciclería Café Taller</h3>
+          <p>Desde aquí se organiza el Gran Fondo Boyacá Mundial. El viernes y el sábado está abierta para que conozcas por dentro el cuartel general de la carrera, con Café Boyacense de Moniquirá.</p>
+          <p class="dato">Cra. 16 # 19-28, Duitama</p>
+          <p><a class="ir" href="https://www.google.com/maps/search/?api=1&amp;query=La+Cicler%C3%ADa+Caf%C3%A9+Taller+Duitama" rel="noopener" data-evento="aliado-cicleria">Cómo llegar</a></p>
+        </article>
+        <article class="tarjeta lugar">
+          <span class="etiqueta">Hotel aliado</span>
+          <h3>Hotel Nivari Duitama</h3>
+          <p>A 1,3 km de la salida. Cra. 13 # 18-191.</p>
+          <p><a class="ir" href="https://www.gfboyacamundial.com/es/hotel/?utm_source=visitduitama&amp;utm_medium=referral&amp;utm_campaign=acompanantes-2026" data-evento="aliado-nivari">Tarifa del evento y contacto</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- Chequeo y teléfonos -->
   <section class="seccion" id="telefonos">
     <div class="envoltura">
@@ -446,7 +486,7 @@ legend{font-weight:800;margin-bottom:8px}
           <h2 style="font-size:28px;margin:8px 0 14px">Acuerden esto</h2>
           <ul class="chequeo">
             <li><span><b>Un punto y una hora de encuentro después de la meta.</b> Con miles de personas en el mismo lugar, la señal se satura: no cuenten con llamarse.</span></li>
-            <li><span><b>Su número de participante.</b> Lo vas a necesitar para buscarlo en los resultados y en las fotos.</span></li>
+            <li><span><b>Su número de participante.</b> Lo vas a necesitar para buscarlo en los resultados de Finalap y en las fotos.</span></li>
             <li><span><b>Celular cargado y batería externa.</b> Son muchas horas.</span></li>
             <li><span><b>Abrigo para la madrugada.</b> La salida está a 2.531 m sobre el nivel del mar.</span></li>
             <li><span><b>Esta página en el celular.</b> Ábrela una vez con señal y después funciona sin conexión.</span></li>
@@ -471,6 +511,8 @@ legend{font-weight:800;margin-bottom:8px}
         <h2>La carrera, en su sitio oficial</h2>
       </div>
       <div class="enlaces">
+        <a class="enlace" href="https://www.gfboyacamundial.com/es/tienda/?utm_source=visitduitama&amp;utm_medium=referral&amp;utm_campaign=acompanantes-2026" data-evento="gfbm-tienda"><span>Tienda oficial de La 10<small>Jersey, buzo y recuerdos de la décima edición</small></span></a>
+        <a class="enlace" href="https://www.gfboyacamundial.com/es/hotel/?utm_source=visitduitama&amp;utm_medium=referral&amp;utm_campaign=acompanantes-2026" data-evento="gfbm-hotel"><span>Hotel aliado<small>Hotel Nivari Duitama, a 1,3 km de la salida</small></span></a>
         <a class="enlace" href="https://www.gfboyacamundial.com/es/que-sigue/?utm_source=visitduitama&amp;utm_medium=referral&amp;utm_campaign=acompanantes-2026" data-evento="gfbm-que-sigue"><span>Qué sigue antes de la carrera<small>Kit, horarios y avisos de la organización</small></span></a>
         <a class="enlace" href="https://www.gfboyacamundial.com/es/?utm_source=visitduitama&amp;utm_medium=referral&amp;utm_campaign=acompanantes-2026#ruta" data-evento="gfbm-ruta"><span>La ruta y el GPX<small>Gran Fondo y Medio Fondo</small></span></a>
         <a class="enlace" href="https://www.instagram.com/gfboyacamundial" data-evento="gfbm-instagram"><span>@gfboyacamundial<small>Avisos de última hora en Instagram</small></span></a>
