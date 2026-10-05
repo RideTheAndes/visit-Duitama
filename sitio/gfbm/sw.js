@@ -1,7 +1,7 @@
 /* Modo sin señal: la página se guarda la primera vez que se abre con señal.
  * HTML: primero la red y, si no hay, la copia. Lo demás: la copia y se
  * actualiza por detrás. Cambiar VERSION al publicar cambios grandes. */
-var VERSION = 'gfbm-2026-10-03f';
+var VERSION = 'gfbm-2026-10-05a';
 var BASICOS = ['/gfbm/', '/gfbm/app.js', '/gfbm/lugares.js', '/gfbm/rutas.json', '/gfbm/portada-780.webp', '/favicon.svg'];
 
 self.addEventListener('install', function (e) {
@@ -17,7 +17,7 @@ self.addEventListener('fetch', function (e) {
   if (req.method !== 'GET') return;
   var url = new URL(req.url);
   // Ni la analítica ni los mosaicos del mapa se guardan.
-  if (url.hostname.indexOf('cloudflareinsights') !== -1 || url.hostname.indexOf('basemaps.cartocdn.com') !== -1) return;
+  if (url.hostname.indexOf('cloudflareinsights') !== -1 || url.hostname.indexOf('tile.openstreetmap.org') !== -1) return;
   if (req.mode === 'navigate') {
     e.respondWith(fetch(req).then(function (r) {
       var copia = r.clone();

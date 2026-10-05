@@ -70,12 +70,14 @@
     },
     {
       "@type": "ItemList",
-      "name": "Aliados del Gran Fondo en Duitama",
+      "name": "Dónde comer y dormir en Duitama durante el Gran Fondo",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "item": { "@type": "CafeOrCoffeeShop", "name": "La Ciclería Café Taller", "address": { "@type": "PostalAddress", "streetAddress": "Cra. 16 # 19-28", "addressLocality": "Duitama", "addressCountry": "CO" } } },
         { "@type": "ListItem", "position": 2, "item": { "@type": "Restaurant", "name": "Rugantino di Roma", "servesCuisine": "Italiana", "address": { "@type": "PostalAddress", "streetAddress": "Cra. 13 # 17A-23", "addressLocality": "Duitama", "addressCountry": "CO" }, "sameAs": "https://www.instagram.com/rugantinodiroma/" } },
         { "@type": "ListItem", "position": 3, "item": { "@type": "Restaurant", "name": "Fusionario Casa", "servesCuisine": "Fusión", "address": { "@type": "PostalAddress", "streetAddress": "Cl. 13 # 17-26", "addressLocality": "Duitama", "addressCountry": "CO" }, "sameAs": "https://www.instagram.com/fusionario_casa/" } },
-        { "@type": "ListItem", "position": 4, "item": { "@type": "Hotel", "name": "Hotel Nivari Duitama", "address": { "@type": "PostalAddress", "streetAddress": "Cra. 13 # 18-191", "addressLocality": "Duitama", "addressCountry": "CO" } } }
+        { "@type": "ListItem", "position": 4, "item": { "@type": "Restaurant", "name": "Alma - Sanguchería Artesanal", "servesCuisine": "Sánguches", "address": { "@type": "PostalAddress", "streetAddress": "Cl. 18 # 12-60", "addressLocality": "Duitama", "addressCountry": "CO" } } },
+        { "@type": "ListItem", "position": 5, "item": { "@type": "Restaurant", "name": "Tríbula Cevichería", "servesCuisine": "Ceviches", "address": { "@type": "PostalAddress", "streetAddress": "Centro Comercial Innovo Plaza, piso 2, locales 205 y 206", "addressLocality": "Duitama", "addressCountry": "CO" }, "sameAs": "https://www.instagram.com/tribula.cevicheria/" } },
+        { "@type": "ListItem", "position": 6, "item": { "@type": "Hotel", "name": "Hotel Nivari Duitama", "address": { "@type": "PostalAddress", "streetAddress": "Cra. 13 # 18-191", "addressLocality": "Duitama", "addressCountry": "CO" } } }
       ]
     }
   ]
@@ -254,6 +256,7 @@ legend{font-weight:800;margin-bottom:8px}
 .regla p{margin:0;color:var(--apagado);font-size:15.5px}
 .mapa-caja{border-radius:var(--radio);overflow:hidden;border:1px solid var(--borde);background:#e9eef3}
 #mapa{height:min(70vh,520px);min-height:340px}
+#mapa .leaflet-tile-pane{filter:saturate(.3) brightness(1.04)}
 .mapa-sin{display:flex;align-items:center;justify-content:center;height:100%;color:var(--apagado);font-size:15px;padding:20px;text-align:center}
 .mapa-barra{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
 .mapa-barra button{min-height:42px;padding:8px 15px;border-radius:999px;border:2px solid var(--borde);background:#fff;font:800 14px var(--texto);cursor:pointer;color:var(--tinta)}
@@ -461,7 +464,7 @@ legend{font-weight:800;margin-bottom:8px}
           <div class="resultado__estar" id="res-estar">Estate en la meta desde las 11:45 a.m.</div>
           <div id="res-alerta"></div>
           <ol class="paso-lista" id="res-pasos"></ol>
-          <p class="nota" style="margin-top:14px">Los tiempos oficiales los toma por chip <a href="https://www.finalap.com/" rel="noopener" data-evento="finalap">Finalap</a>, el cronometrador del Gran Fondo, y ahí se publican los resultados. ¿Seguimiento en vivo? <span class="pendiente">Si lo habilitan, lo enlazamos aquí</span></p>
+          <p class="nota" style="margin-top:14px">Los tiempos oficiales los toma por chip Finalap, el cronometrador del Gran Fondo, y los resultados salen en <a href="https://www.finalap.com/gran-fondo-boyaca-mundial-2026" rel="noopener" data-evento="finalap-2026">su página del Gran Fondo 2026</a>.</p>
           <button class="btn-cal" id="btn-cal" type="button" data-evento="calendario">Ponerme una alarma en el calendario</button>
           <p class="nota">Es un cálculo con velocidad pareja: la montaña, los pinchazos y el cansancio lo mueven. Úsalo para organizar tu mañana, no para cronometrar. Los kilómetros son los de la guía del participante.</p>
         </div>
@@ -479,7 +482,7 @@ legend{font-weight:800;margin-bottom:8px}
       </div>
       <div class="curva-grid">
         <div class="tarjeta"><b>Sopa de leña, gratis</b><p>Desde hace más de nueve años, Doña María y su familia hacen la sopa en fogón de leña, a la manera tradicional. Casi siempre es mondongo, y siempre es gratis para quienes acompañan a los participantes.</p></div>
-        <div class="tarjeta"><b>Caminata guiada</b><p>Sube a pie con alguien del equipo del Gran Fondo. <span class="pendiente">Hora y punto de encuentro</span></p></div>
+        <div class="tarjeta"><b>Caminata guiada</b><p>Sube a pie con alguien del equipo del Gran Fondo para llegar a la curva hacia las 9:30 a.m. A paso suave y con un par de paradas son una hora y media desde la Cámara de Comercio: la salida sería hacia las 8:00 a.m. <span class="pendiente">Hora y punto de encuentro exactos</span></p></div>
         <div class="tarjeta"><b>Solo a pie, y con tiempo</b><p>Son unos 4 km desde la Cámara de Comercio, casi todo en subida (210 m): cuenta con una hora larga. La vía está en carrera: nada de carro ni moto. <a href="https://www.google.com/maps/dir/?api=1&amp;destination=5.857265,-73.025647&amp;travelmode=walking" rel="noopener" data-evento="curva-como-llegar">Cómo llegar</a></p></div>
       </div>
       <p class="hora-curva" id="hora-curva">Calcula <a href="#llegada">arriba</a> a qué hora pasa tu ciclista por la curva.</p>
@@ -502,7 +505,7 @@ legend{font-weight:800;margin-bottom:8px}
         </div>
         <div class="regla regla--alerta">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-          <div><b>Las vías cierran a las 5:30 a.m.</b><p>Si vas en carro a despedirlo, llega antes. Los corrales abren a las 4:50 y cierran a las 5:50.</p></div>
+          <div><b>Las vías cierran a las 5:30 a.m. y reabren a las 2:00 p.m.</b><p>Si vas en carro a despedirlo, llega antes. Los corrales abren a las 4:50 y cierran a las 5:50. ¿Vuelves a Bogotá el domingo? La vía a Paipa ya está abierta a las 8:00 a.m.</p></div>
         </div>
         <div class="regla">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 16V8h3a2.5 2.5 0 0 1 0 5h-3"/></svg>
@@ -529,7 +532,7 @@ legend{font-weight:800;margin-bottom:8px}
         <button type="button" id="btn-yo" data-evento="ubicacion">¿Dónde estoy?</button>
         <span class="leyenda"><span><i style="background:var(--gf)"></i>Gran Fondo</span><span><i style="background:var(--mf)"></i>Medio Fondo</span><span><i style="background:var(--maiz);height:7px"></i>Subida al Cogollo</span></span>
       </div>
-      <p class="nota">Ruta: track oficial del GFBM 2026. Las horas de reapertura de cada vía las define Tránsito: <span class="pendiente">las publicamos aquí apenas las tengamos</span></p>
+      <p class="nota">Ruta: track oficial del GFBM 2026. Todas las vías de la ruta se reabren a las 2:00 p.m.; algunas antes, como la vía a Paipa, la salida de Duitama hacia Bogotá, que ya está abierta a las 8:00 a.m. Durante la semana publicamos más detalles.</p>
     </div>
   </section>
 
@@ -561,10 +564,12 @@ legend{font-weight:800;margin-bottom:8px}
           <div class="hito"><time>5:50</time><div><b>Cierran los corrales</b></div></div>
           <div class="hito"><time>6:00</time><div><b>Sale el Gran Fondo <span class="chip chip--gf">GF</span></b><small>143,5 km</small></div></div>
           <div class="hito"><time>6:15</time><div><b>Sale el Medio Fondo <span class="chip chip--mf">MF</span></b><small>100 km</small></div></div>
+          <div class="hito"><time>8:00</time><div><b>Abre la vía a Paipa</b><small>La salida de Duitama hacia Bogotá.</small></div></div>
+          <div class="hito"><time>8:00</time><div><b>Caminata a la Curva del Divino Niño</b><small>Para llegar a la barra hacia las 9:30, con sopa de leña gratis. <span class="pendiente">Hora y punto exactos</span> <a href="#divino-nino">Detalles</a>.</small></div></div>
           <div class="hito"><time>9:30</time><div><b>Primeras llegadas, aproximadamente</b><small>Calcula la de tu ciclista <a href="#llegada">arriba</a>.</small></div></div>
           <div class="hito"><time>10:30</time><div><b>Corte en Monguí <span class="chip chip--gf">GF</span></b><small>Quien no pase a tiempo sube al bus escoba.</small></div></div>
-          <div class="hito"><time>Mañana</time><div><b>Barra en la Curva del Divino Niño</b><small>Subida al Cogollo, con sopa de leña gratis para quien acompaña. <a href="#divino-nino">Detalles</a>.</small></div></div>
           <div class="hito"><time>12:00</time><div><b>Corte en Tobasía <span class="chip chip--gf">GF</span> <span class="chip chip--mf">MF</span></b><small>Igual: bus escoba o sigue bajo su propia responsabilidad.</small></div></div>
+          <div class="hito"><time>2:00</time><div><b>Reabren todas las vías</b></div></div>
           <div class="hito"><time>2:30</time><div><b>Premiación</b><small>Hora tentativa: la organización la confirma en sus canales oficiales.</small></div></div>
         </article>
       </div>
@@ -586,7 +591,7 @@ legend{font-weight:800;margin-bottom:8px}
           <ol>
             <li><b>6:00 · la salida</b>Despídelo en los corrales y míralo arrancar.</li>
             <li><b>Camina al centro</b>La Plaza de los Libertadores y la Catedral de San Lorenzo Mártir quedan a poco más de un kilómetro de la salida, unos 15 minutos a pie.</li>
-            <li><b>Desayuno sin afán</b>Hay panaderías y cafés alrededor de la plaza. <span class="pendiente">Cuáles abren temprano el domingo</span></li>
+            <li><b>Desayuno sin afán</b>En la Plaza de los Libertadores hay varios cafés que abren temprano.</li>
             <li><b>A la meta</b>A la hora que te dio la calculadora.</li>
           </ol>
         </article>
@@ -635,9 +640,9 @@ legend{font-weight:800;margin-bottom:8px}
   <section class="seccion seccion--blanca almenas" id="aliados">
     <div class="envoltura">
       <div class="seccion__cabeza">
-        <span class="ceja">Aliados del Gran Fondo</span>
+        <span class="ceja">Aliados y recomendados</span>
         <h2>Dónde comer y dormir</h2>
-        <p>Los negocios que acompañan a La 10.</p>
+        <p>Los negocios que acompañan a La 10 y otros que te recomendamos.</p>
       </div>
       <div class="lugares" id="lista-aliados">
         <article class="tarjeta lugar lugar--casa oscuro">
@@ -660,6 +665,20 @@ legend{font-weight:800;margin-bottom:8px}
           <p>Cocina de fusión. Domingo al mediodía; viernes y sábado, almuerzo y cena. <span class="pendiente">Horario exacto</span></p>
           <p class="dir">Cl. 13 # 17-26</p>
           <p><a class="ir" href="https://www.instagram.com/fusionario_casa/" rel="noopener" data-evento="aliado-fusionario">@fusionario_casa</a> · <a class="ir" href="https://www.google.com/maps/dir/?api=1&amp;destination=5.82528,-73.03498" rel="noopener">Cómo llegar</a></p>
+        </article>
+        <article class="tarjeta lugar">
+          <span class="etiqueta">Recomendado · sánguches</span>
+          <h3>Alma</h3>
+          <p>Sanguchería artesanal en el centro, a unos 400 metros de la Plaza de los Libertadores.</p>
+          <p class="dir">Cl. 18 # 12-60</p>
+          <p><a class="ir" href="https://maps.app.goo.gl/vbrc1ti7YNM4MZdq7" rel="noopener" data-evento="recomendado-alma">Ver en Google Maps</a> · <a class="ir" href="https://www.google.com/maps/dir/?api=1&amp;destination=5.83095,-73.03340" rel="noopener">Cómo llegar</a></p>
+        </article>
+        <article class="tarjeta lugar">
+          <span class="etiqueta">Recomendado · cevichería</span>
+          <h3>Tríbula Cevichería</h3>
+          <p>Ceviches en el segundo piso del Centro Comercial Innovo Plaza, locales 205 y 206.</p>
+          <p class="dir">C.C. Innovo Plaza, piso 2</p>
+          <p><a class="ir" href="https://www.instagram.com/tribula.cevicheria/" rel="noopener" data-evento="recomendado-tribula">@tribula.cevicheria</a> · <a class="ir" href="https://www.google.com/maps/dir/?api=1&amp;destination=5.83236,-73.03216" rel="noopener">Cómo llegar</a></p>
         </article>
         <article class="tarjeta lugar" id="dormir">
           <span class="etiqueta">Hotel aliado</span>

@@ -131,7 +131,7 @@
       // (unos 4 km con 210 m de subida desde la Cámara de Comercio).
       var tempranoCurva = salida + (curva - salida) * (1 - MARGEN);
       var salir = abajo5(tempranoCurva - CAMINATA_CURVA_MIN);
-      enCurva.textContent = c.nombre + ' a ' + v.toFixed(v % 1 ? 1 : 0).replace('.', ',') + ' km/h: pasa por la Curva del Divino Niño hacia las ' + hora(curva).larga + '. Para verlo, sal de la Cámara de Comercio a más tardar a las ' + hora(salir).larga + '.';
+      enCurva.textContent = c.nombre + ' a ' + v.toFixed(v % 1 ? 1 : 0).replace('.', ',') + ' km/h: pasa por la Curva del Divino Niño hacia las ' + hora(curva).larga + ' Para verlo, sal de la Cámara de Comercio a más tardar a las ' + hora(salir).larga;
     }
     $('#res-alerta').innerHTML = alertas.map(function (a) { return '<div class="alerta">' + a + '</div>'; }).join('');
 
@@ -170,7 +170,7 @@
       'DTEND:' + utc(ultimo.tarde),
       'SUMMARY:Llegada a la meta · ' + ultimo.c.nombre + ' La 10',
       'LOCATION:Cámara de Comercio de Duitama\\, Transversal 19 # 23-141\\, Duitama',
-      'DESCRIPTION:Hora estimada de llegada: ' + hora(ultimo.llega).larga + '. Cálculo de visitduitama.com/gfbm',
+      'DESCRIPTION:Hora estimada de llegada: ' + hora(ultimo.llega).larga + ' Cálculo de visitduitama.com/gfbm',
       'BEGIN:VALARM', 'TRIGGER:-PT30M', 'ACTION:DISPLAY', 'DESCRIPTION:En 30 minutos\\, a la meta', 'END:VALARM',
       'END:VEVENT', 'END:VCALENDAR'
     ].join('\r\n');
@@ -210,9 +210,10 @@
       var caja = document.getElementById('mapa');
       caja.innerHTML = '';
       mapa = L.map(caja, { scrollWheelZoom: false, tap: true }).setView(SALIDA, 14);
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        maxZoom: 19, subdomains: 'abcd',
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+      // CARTO empezó a pedir llave (oct 2026): mosaicos de OpenStreetMap, apagados por CSS.
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(mapa);
       var colores = { 'gran-fondo': '#4481c2', 'medio-fondo': '#3ba935', 'cogollo': '#FFC93C' };
       capaRuta = L.geoJSON(rutas, {
@@ -274,15 +275,17 @@
   // ---------- Buscador ----------
   // Lo que la gente escribe → la sección que lo responde. Sin servidor.
   var INDICE = [
-    { t: 'Curva del Divino Niño', s: 'Barra, sopa de leña gratis', h: '#divino-nino', k: 'curva divino nino sopa barra ver carrera animar alentar cogollo mondongo gratis' },
+    { t: 'Curva del Divino Niño', s: 'Barra, sopa de leña gratis', h: '#divino-nino', k: 'curva divino nino sopa barra ver carrera animar alentar cogollo mondongo gratis caminata guiada caminar subir' },
     { t: '¿A qué hora llega?', s: 'Calculadora de llegada', h: '#llegada', k: 'hora llega llegada calcular calculadora tiempo meta cuanto tarda' },
-    { t: 'Domingo sin carro', s: 'Vías cerradas, parqueaderos y mapa', h: '#domingo', k: 'vias cierre cierres cerradas transito carro parqueadero parqueo parquear domingo mapa ruta moverse' },
+    { t: 'Domingo sin carro', s: 'Vías cerradas, parqueaderos y mapa', h: '#domingo', k: 'vias cierre cierres cerradas reapertura reabren abren transito carro parqueadero parqueo parquear domingo mapa ruta moverse bogota paipa regreso volver' },
     { t: 'Agenda del fin de semana', s: 'Kits, Expo Bici, rodada, premiación', h: '#agenda', k: 'agenda horario horarios kit kits expo feria rodada viernes sabado domingo premiacion salida' },
     { t: 'Planes a pie', s: 'Café, niños, salida y meta', h: '#planes', k: 'planes plan ninos familia desayuno desayunar cafe centro plaza catedral' },
     { t: 'Para la víspera', s: 'Pueblito, termales, Pantano de Vargas', h: '#vispera', k: 'pueblito boyacense termales paipa pantano vargas turismo pasear visitar' },
     { t: 'La Ciclería Café Taller', s: 'La casa del Gran Fondo', h: '#aliados', k: 'cicleria cafe taller casa gran fondo visitar cafe moniquira' },
     { t: 'Rugantino di Roma', s: 'Restaurante italiano', h: '#aliados', k: 'comer comida restaurante restaurantes italiano pizza pasta almorzar almuerzo cenar cena' },
     { t: 'Fusionario Casa', s: 'Cocina de fusión', h: '#aliados', k: 'comer comida restaurante restaurantes fusion almorzar almuerzo cenar cena' },
+    { t: 'Alma', s: 'Sanguchería artesanal', h: '#aliados', k: 'comer comida sanguche sanguches sanduche sanduches sandwich alma rapido almorzar almuerzo cenar cena' },
+    { t: 'Tríbula Cevichería', s: 'Ceviches en Innovo Plaza', h: '#aliados', k: 'comer comida ceviche ceviches cevicheria mariscos pescado tribula innovo plaza centro comercial almorzar almuerzo cenar cena' },
     { t: 'Hotel Nivari Duitama', s: 'Hotel aliado', h: '#dormir', k: 'dormir hotel hoteles hospedaje alojamiento habitacion' },
     { t: 'Teléfonos', s: 'Asistencia médica, mecánica y 123', h: '#telefonos', k: 'telefono telefonos emergencia emergencias medica mecanica ayuda 123 llamar' },
     { t: 'Resultados', s: 'Finalap, el cronometrador', h: '#llegada', k: 'resultados finalap tiempos chip clasificacion' },

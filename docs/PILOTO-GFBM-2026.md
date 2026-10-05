@@ -48,6 +48,14 @@ experiencia de acompañantes» (nivel 1, MVP): práctica 1 (tiempos de paso y ll
 | Curva del Divino Niño: sopa gratis (casi siempre mondongo), caminata guiada | Sergio, 3 oct 2026 |
 | La curva está en la subida al Cogollo (km 133–138 GF; base en el km 93,4 de 103,1 del GPX del MF) | Inferencia: crono 5 de la guía + Boyacá 7 Días (2020) ubica la imagen del Divino Niño en el sector El Cogollo, que el GPX cruza en el km 135. **Falta la ubicación exacta** |
 | Hotel Nivari Duitama, 1,3 km de la salida, Cra. 13 # 18-191 | `EVENT.hotel` del repo gfbm |
+| Curva del Divino Niño en 5.857265, -73.025647 | Sergio, 3 oct 2026 |
+| Resultados en finalap.com/gran-fondo-boyaca-mundial-2026 (la página ya existe) | Sergio, 5 oct 2026 |
+| Caminata guiada: llegar a la curva hacia las 9:30 a.m.; hora y punto por confirmar | Sergio, 5 oct 2026 |
+| Salida de la caminata hacia las 8:00 a.m. (1 h 30) | Cálculo: 270 m planos + 3,5 km con 210 m de subida; Tobler da ~55 min, a paso suave (×0,75) ~75 min, más ~15 min de paradas del grupo. Los mismos 75 min usa la calculadora (`CAMINATA_CURVA_MIN`) |
+| Todas las vías reabren a las 2:00 p.m.; la vía a Paipa (salida a Bogotá) ya está abierta a las 8:00 a.m.; más detalles en la semana | Sergio, 5 oct 2026 |
+| Varios cafés de la Plaza de los Libertadores abren temprano (sin nombrar marcas) | Sergio, 5 oct 2026 |
+| Recomendados: Alma – Sanguchería Artesanal (Cl. 18 # 12-60) y Tríbula Cevichería (C.C. Innovo Plaza, piso 2, locales 205 y 206, @tribula.cevicheria) | Sergio, 5 oct 2026 (enlaces de Google Maps); coordenadas e Instagram de las fichas de Google Maps |
+| Mapa base: teselas de OpenStreetMap | Desde el 5 oct 2026; CARTO empezó a devolver teselas «API KEY REQUIRED» |
 
 **Descartado por la verificación del 3 oct:** la entrada al Pueblito de $7.000 (en 2024 era $6.000;
 2026 sin dato), las visitas del Viñedo de Puntalarga (un blog de sep 2026 dice que se suspendieron),
@@ -56,13 +64,11 @@ verificada; Culturama es el Instituto de Cultura y Bellas Artes de Duitama).
 
 ## Pendiente (lo marcado «por confirmar» en la página)
 
-- Cafés y panaderías que abren antes de las 8 a.m. el domingo: llamar o ir a ver. OSM no trae horarios.
 - Horario y precio 2026 del Pueblito Boyacense, y si abre el domingo por la mañana.
-- Seguimiento en vivo por chip: preguntar a la organización quién cronometra y si hay enlace público.
-- Hora de la premiación y horas de reapertura de vías (Tránsito / PMU).
+- Hora y punto de encuentro exactos de la caminata guiada a la curva (Sergio).
+- Detalles de reapertura de vías vía por vía (Sergio los pasa en la semana).
+- Horario exacto de Fusionario Casa.
 - Punto de reencuentro: los tótems por letra del apellido (práctica 4) dependen de la organización.
-- Curva del Divino Niño: coordenadas exactas, hora y punto de encuentro de la caminata guiada (Sergio).
-- «Alma»: no aparece en Duitama en ninguna fuente; falta dirección o Instagram (Sergio).
 - Marcas aliadas de la Expo Bici y de gastronomía (vie–dom): las pasa Sergio.
 - Canal de contacto: el WhatsApp de Sergio (falta el número).
 

@@ -15,6 +15,9 @@ window.VISITDUITAMA_LUGARES = [
   // Aliados: Rugantino (OSM y Restaurant Guru coinciden); Fusionario (Restaurant Guru).
   { nombre: 'Rugantino di Roma', lat: 5.83073, lon: -73.03336, letra: 'R', color: '#12131A', texto: 'Restaurante aliado · Cra. 13 # 17A-23' },
   { nombre: 'Fusionario Casa', lat: 5.82528, lon: -73.03498, letra: 'F', color: '#12131A', texto: 'Restaurante aliado · Cl. 13 # 17-26' },
+  // Recomendados por Sergio (5 oct 2026): coordenadas de la ficha de Google Maps.
+  { nombre: 'Alma', lat: 5.83095, lon: -73.03340, letra: 'A', color: '#12131A', texto: 'Sanguchería artesanal · Cl. 18 # 12-60' },
+  { nombre: 'Tríbula Cevichería', lat: 5.83236, lon: -73.03216, letra: 'T', color: '#12131A', texto: 'C.C. Innovo Plaza, piso 2, locales 205 y 206' },
   { nombre: 'Parqueadero Colegio Rafael Reyes', lat: 5.83025, lon: -73.02327, letra: 'E', color: '#12131A', texto: 'Frente a la Cámara de Comercio (guía del participante)' },
   { nombre: 'Parqueadero UPTC', lat: 5.82752, lon: -73.02450, letra: 'E', color: '#12131A', texto: 'Entrada por la Carrera 18 (guía del participante)' }
 ];
